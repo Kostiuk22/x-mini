@@ -1,0 +1,18 @@
+
+
+.editBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  border: 1px solid grey;
+  border-radius: 18px;
+  padding: 0 16px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background-color 0.2s;
+}
+
+.editBtn:hover {
+  background-color: rgb(24, 25, 25);
+}

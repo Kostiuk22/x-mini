@@ -1,0 +1,26 @@
+.moreBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 17px;
+  transition: all 0.3s;
+  color: rgb(113, 118, 123);
+  cursor: pointer;
+}
+
+.blackMode {
+  color: white;
+}
+
+.moreBtn:hover {
+  background-color: rgb(23, 38, 49);
+  color: rgb(29, 155, 240);
+}
+
+.blackMode:hover {
+  background-color: var(--secondary-grey-color);
+  color: white;
+}

@@ -1,0 +1,40 @@
+.home {
+  position: relative;
+  width: 598px;
+}
+
+.navMenu {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid var(--main-grey-color);
+}
+
+.btn {
+  width: 50%;
+  height: 53px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(113, 118, 123);
+  transition: background-color 0.2s ease-in;
+}
+
+.navMenu button:hover {
+  background-color: rgb(24, 24, 24);
+}
+
+.active {
+  position: relative;
+  font-weight: 700;
+  color: white;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  border-radius: 3px;
+  width: 60px;
+  height: 3px;
+  background-color: var(--main-blue-color);
+}

@@ -1,0 +1,62 @@
+.postReply {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.replyTo {
+  padding-left: 48px;
+  margin-bottom: 8px;
+  cursor: default;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.textareaWrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.postReply textarea {
+  position: relative;
+  font: inherit;
+  top: 5px;
+  flex: 1;
+  min-height: 28px;
+  background-color: inherit;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  resize: none;
+  overflow: hidden;
+}
+
+.postReply textarea::placeholder {
+  color: rgb(69, 72, 75);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.postReply textarea:focus {
+  border: none;
+  outline: none;
+}
+
+.inputColumn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tabRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 44px;
+  margin-top: 8px;
+}

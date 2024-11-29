@@ -1,0 +1,34 @@
+.filePreview {
+  position: relative;
+  height:fit-content;
+  scroll-snap-align: start;
+  
+}
+
+.filePreview img {
+  width: 249px;
+  height: 300px;
+  object-fit: cover;
+}
+.filePreview video {
+  width: 249px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 17px;
+  background-color: #161a1e;
+  top: 5px;
+  right: 5px;
+  transition: background-color 0.3s;
+}
+
+.close:hover {
+  background-color: transparent;
+}

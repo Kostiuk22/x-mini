@@ -1,0 +1,27 @@
+.info {
+  display: flex;
+  gap: 4px;
+  font-size: 15px;
+  color: var(--main-grey-color);
+  padding: 16px 0;
+}
+
+.date {
+  cursor: pointer;
+}
+
+.date:hover {
+  text-decoration: underline;
+}
+
+.views {
+  cursor: text;
+}
+
+
+
+.views span {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--main-white-color);
+}

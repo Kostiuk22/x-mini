@@ -1,0 +1,10 @@
+.leftSide {
+  width: 259px;
+
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 8px;
+}

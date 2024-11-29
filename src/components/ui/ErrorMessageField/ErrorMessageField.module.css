@@ -1,0 +1,13 @@
+.errBlock {
+  text-align: left;
+  width: 300px;
+}
+
+.errMsg {
+  display: inline;
+  color: #ec202d;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  text-align: left;
+}

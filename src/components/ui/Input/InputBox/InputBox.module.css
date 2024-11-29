@@ -1,0 +1,32 @@
+.inputBox {
+    padding: 8px;
+    border-radius: 3px;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #333639;
+  }
+  
+  .inputBox:focus-within {
+    border: 1px solid #1d9bf0;
+  }
+  
+  .error {
+    border: 1px solid #f4212e;
+  }
+  
+  .placeholderBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+  
+  .placeholderBox p {
+    color: #71767b;
+    font-size: 13px;
+  }
+  
+  .placeholderText {
+    color: #71767b;
+    font-size: 13px;
+  }

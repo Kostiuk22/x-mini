@@ -1,0 +1,58 @@
+.postCreatedField {
+  display: flex;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--main-grey-color);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+}
+
+.wrapper textarea {
+  position: relative;
+  font: inherit;
+  top: 5px;
+  min-height: 28px;
+  background-color: inherit;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin-bottom: 4px;
+  font-weight: 400;
+  white-space: pre-wrap;
+  resize: none;
+  overflow-y: hidden;
+}
+
+.wrapper textarea::placeholder {
+  color: rgb(92, 96, 100);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.wrapper textarea:focus {
+  border: none;
+  outline: none;
+}
+
+.wrapper img {
+  width: 518px;
+  border-radius: 15px;
+}
+
+.filesPreviewWrapper {
+  display: inline-flex;
+  width: 518px;
+  overflow-x: auto;
+  scroll-behavior:smooth;
+}
+
+.tabRow {
+  border-top: 1px solid var(--main-grey-color);
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}

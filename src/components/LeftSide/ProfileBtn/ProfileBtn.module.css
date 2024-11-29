@@ -1,0 +1,42 @@
+.profileBtn {
+  position: relative;
+  display: flex;
+  width: 259px;
+  padding: 12px;
+  border-radius: 30px;
+  margin-bottom: 12px;
+  transition: background-color 0.2s;
+}
+
+.dots {
+  position: absolute;
+  right: 15px;
+  top: 23px;
+}
+
+.profileBtn:hover {
+  background-color: rgb(24, 24, 24);
+}
+
+.profileImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: white;
+}
+
+.info {
+
+  text-align: start;
+  
+}
+
+.info h5 {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 15px;
+}

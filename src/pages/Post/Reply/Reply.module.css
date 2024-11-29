@@ -1,0 +1,47 @@
+.reply {
+  display: flex;
+  cursor: pointer;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.left h5 {
+  margin-left: 4px;
+}
+
+.left span:hover {
+  text-decoration: underline;
+}
+
+.right {
+  position: relative;
+    display: flex;
+    height: 20px;
+    top: -8px;
+}
+
+.text {
+    margin-bottom: 12px;
+    white-space: pre-wrap;
+}
+
+.text p {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(231, 233, 234);
+}

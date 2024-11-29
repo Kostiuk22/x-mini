@@ -1,0 +1,11 @@
+.footer {
+  padding: 0 16px;
+}
+
+.footer li {
+    display: inline-block;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  color: rgb(113, 118, 123);
+}

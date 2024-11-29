@@ -1,0 +1,19 @@
+.nickName {
+  position: relative;
+  display: inline-block; 
+  max-width: 100%; 
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.nickName p {
+  cursor: pointer;
+  color: rgb(231, 233, 234);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.nickName p:hover {
+  text-decoration: underline;
+}

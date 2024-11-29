@@ -1,0 +1,46 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: white;
+  background-color: var(--main-blue-color);
+  border-radius: 9999px;
+  min-height: 50px;
+  padding: 0 32px;
+  transition: background-color 0.3s;
+}
+
+.btn:not(.disabled):hover {
+  background-color: rgb(12, 126, 202);
+}
+
+.btn h3 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.small {
+  min-height: 36px;
+  padding: 0 16px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.fullWidth h3 {
+  font-size: 17px;
+}
+
+.btn.disabled:hover {
+  background-color: rgb(15, 78, 120);
+}
+.disabled {
+  min-height: 36px;
+  padding: 0 16px;
+  background-color: rgb(15, 78, 120);
+  color: rgb(128, 128, 128);
+  cursor: initial;
+}
+

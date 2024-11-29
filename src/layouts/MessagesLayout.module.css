@@ -1,0 +1,12 @@
+.messagesLayout {
+}
+
+.messagesLayoutOutlet {
+    position: absolute;
+    z-index: 600;
+    width: 599px;
+    height: 100vh;
+    left: 448px;
+    top: 0;
+    border-right: 1px solid var(--main-grey-color);
+}

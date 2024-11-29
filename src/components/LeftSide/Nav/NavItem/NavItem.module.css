@@ -1,0 +1,32 @@
+.navItem {
+  display: inline-block;
+  width: 100%; /* Лінк на 100% ширини */
+  text-decoration: none;
+}
+
+.content {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 18px;
+  border-radius: 30px;
+  transition: background-color 0.2s;
+  width: auto; /* Контейнер автоматичної ширини під контент */
+}
+
+.navItem:hover .content {
+  background-color: rgb(24, 24, 24); /* Ховер лише на контент */
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-size: 20px;
+  margin: 0 16px 0 20px;
+}
+
+.active .name{
+    font-weight: 700;
+}

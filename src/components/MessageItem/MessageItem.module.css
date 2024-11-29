@@ -1,0 +1,72 @@
+.messageItem {
+  display: flex;
+  padding: 16px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.2s;
+}
+.messageItem:hover {
+  background-color: var(--secondary-grey-color);
+}
+
+.topSide {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.forBtn {
+  position: absolute;
+  right: 0;
+  top: -8px;
+}
+
+.topSideText {
+  display: flex;
+  
+  align-items: center;
+  gap: 4px;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.content h3 {
+  text-wrap: nowrap;
+}
+
+.content h5 {
+  text-wrap: nowrap;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.active {
+  background-color: rgb(32, 35, 39);
+  border-right: 1px solid var(--main-blue-color);
+  transition: all 0.2s;
+}
+
+.active:hover {
+  background-color: rgb(22, 24, 28);
+}
+
+.seen {
+  background-color: rgb(28, 36, 53);
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}

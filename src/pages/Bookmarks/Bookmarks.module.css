@@ -1,0 +1,26 @@
+.bookmarks {
+  position: relative;
+  width: 598px;
+  cursor: pointer;
+}
+
+.head {
+  padding: 0 16px;
+  border-bottom: 1px solid var(--secondary-grey-color);
+  padding-bottom: 16px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  padding-top: 5px;
+  margin-bottom: 10px;
+}
+
+.title h5 {
+  font-weight: 400;
+}

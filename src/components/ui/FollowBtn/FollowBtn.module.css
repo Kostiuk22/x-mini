@@ -1,0 +1,43 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+
+  padding: 8px 16px;
+  border: 1px solid var(--main-grey-color);
+  border-radius: 9999px;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn h4 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+
+.followBtn {
+  background-color: white;
+  color: black;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.followBtn:hover {
+  background-color: rgb(215, 219, 220);
+  color: rgb(15, 20, 25);
+}
+.unfollowBtn {
+  width: 100px;
+  background-color: rgb(32, 10, 12);
+  color: rgb(244, 33, 46);
+  border-color: rgb(103, 7, 15);
+}
+
+.followingBtn {
+  width: 99.33;
+  background-color: black; /* Заміна фону */
+  color: white; /* Заміна кольору тексту */
+  border-color: 1 px solid white
+}

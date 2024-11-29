@@ -1,0 +1,90 @@
+.list {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
+  z-index: 2;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 4px;
+  height: 18.75px;
+  color: rgb(113, 118, 123);
+  cursor: pointer;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.iconWrapper::before {
+  content: '';
+  position: absolute;
+  width: 34px; /* Розмір кола */
+  height: 34px; /* Розмір кола */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.2s;
+  z-index: -1; /* Розташування позаду іконки */
+}
+
+.icon {
+  width: 19px;
+  height: 19px;
+}
+
+.stat:hover {
+  color: rgb(19, 103, 160);
+}
+
+.stat:hover .iconWrapper::before {
+  background-color: rgb(10, 23, 31); /* Колір кола при наведенні */
+}
+
+/* Сердечко: змінюється і колір іконки, і тексту */
+.stat:hover .heart,
+.stat:hover .heartText {
+  color: rgb(249, 24, 128); /* Колір тексту і іконки при наведенні */
+}
+
+.isLiked .heart,
+.isLiked .heartText {
+  color: rgb(249, 24, 128); /* Колір тексту і іконки при наведенні */
+}
+
+.stat:hover .heart::before {
+  background-color: rgb(46, 4, 24); /* Червоне коло на бекграунді */
+}
+
+/* Репост: змінюється і колір іконки, і тексту */
+.stat:hover .repost,
+.stat:hover .repostText {
+  color: rgb(0, 175, 117); /* Колір тексту і іконки при наведенні */
+}
+
+.stat:hover .views {
+  color: rgb(0, 175, 117); /* Колір тексту і іконки при наведенні */
+}
+
+.stat:hover .repost::before {
+  background-color: rgb(0, 19, 13); /* Зелене коло на бекграунді */
+}
+
+.double {
+  display: flex;
+  gap: 3px;
+}
+
+.isBookmarked .icon {
+  color: var(--main-blue-color);
+}

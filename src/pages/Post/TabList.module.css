@@ -1,0 +1,36 @@
+.tabList {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.tabItem input {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  opacity: 0;
+}
+
+.tabItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: var(--main-blue-color);
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.tabItem:hover {
+  border-radius: 100%;
+  background-color: rgb(4, 21, 32);
+}
+
+.emojiBox {
+  position: absolute;
+  top: 160px;
+  left: 100px;
+  z-index: 1700;
+}

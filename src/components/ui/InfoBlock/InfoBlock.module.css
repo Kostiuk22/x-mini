@@ -1,0 +1,22 @@
+.description {
+  display: flex;
+  justify-content: center;
+  padding-top: 32px ;
+}
+
+.box {
+  display: inline-block;
+  width: 336px;
+}
+
+.box h1 {
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.box h5 {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 28px;
+}

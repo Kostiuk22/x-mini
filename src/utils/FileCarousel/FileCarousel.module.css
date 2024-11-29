@@ -1,0 +1,58 @@
+.carouselWrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  scroll-behavior: smooth;
+  width: 518px;
+  scroll-snap-type: x mandatory;
+
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.scrollBtnLeft {
+  position: absolute;
+  left: 8px;
+  width: 34px;
+  height: 34px;
+  font-size: 16px;
+  border-radius: 50%;
+  background-color: #191d21;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollBtnLeft:hover {
+  background-color: #2e3235;
+}
+
+.scrollBtnRight {
+  position: absolute;
+  right: 8px;
+  width: 34px;
+  height: 34px;
+  font-size: 16px;
+  border-radius: 50%;
+  background-color: #191d21;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollBtnRight:hover {
+  background-color: #2e3235;
+}

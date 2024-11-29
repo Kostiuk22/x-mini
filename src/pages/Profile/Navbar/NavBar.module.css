@@ -1,0 +1,43 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--main-grey-color);
+}
+
+.navItem {
+  height: 53px;
+  width: 100%;
+  color: grey;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.navItem a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.active {
+  position: relative;
+  color: white;
+  font-weight: 700;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  left: 39px;
+  bottom: 0;
+  width: 50%;
+  height: 4px;
+  border-radius: 3px;
+  background-color: var(--main-blue-color);
+}
+
+.navItem:hover {
+  background-color: rgb(24, 24, 24);
+}
