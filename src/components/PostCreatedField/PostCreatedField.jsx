@@ -1,19 +1,25 @@
 import styles from './PostCreatedField.module.css';
+
 import useFilePicker from '../../hooks/useFilePicker';
 import useTextarea from '../../hooks/useTextarea';
 import TabList from '../../pages/Post/TabList';
-import FileCarousel from '../../utils/FileCarousel/FileCarousel.jsx';
+import FileCarousel from '../FileCarousel/FileCarousel.jsx';
 import FilePreview from '../FilePreview/FilePreview.jsx';
 import Avatar from '../ui/Avatar/Avatar';
 import BlueBtn from '../ui/BlueBtn/BlueBtn';
+
 import { useUserProfile } from '../../hooks/useUserProfile.js';
 import { generateTag } from '../../utils/generateTag.js';
 import { useAddPostMutation } from '../../store/postsApi.js';
 
 function PostCreatedField({ handleMenuClose }) {
   const { textareaRef, inputText, setInputText } = useTextarea();
-  const { filesPreview, handleFilesPreviewChange, handleFileDelete } =
-    useFilePicker();
+  const {
+    filesPreview,
+    handleFilesPreviewChange,
+    handleFileDelete,
+    handlePickerReset,
+  } = useFilePicker();
   const { uid, photoURL } = useUserProfile();
   const [addPost] = useAddPostMutation();
 
@@ -32,6 +38,7 @@ function PostCreatedField({ handleMenuClose }) {
   const addPostHandler = () => {
     addPost(postData);
     setInputText('');
+    handlePickerReset();
     if (handleMenuClose) handleMenuClose();
   };
 

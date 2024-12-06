@@ -79,7 +79,6 @@ export const MessagesRequests = {
         if (doc.exists()) {
           callback(doc.data().chats);
         } else {
-          console.warn(`Document with ID ${curUserId} does not exist.`);
           callback(null);
         }
       });

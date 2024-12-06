@@ -1,24 +1,32 @@
-import { useState } from 'react';
+import styles from './PostReply.module.css';
+
 import Avatar from '../../../components/ui/Avatar/Avatar';
 import BlueBtn from '../../../components/ui/BlueBtn/BlueBtn';
-import styles from './PostReply.module.css';
 import TabList from '../TabList';
 import useTextarea from '../../../hooks/useTextarea';
 import useFilePicker from '../../../hooks/useFilePicker';
+import FileCarousel from '../../../components/FileCarousel/FileCarousel';
+import FilePreview from '../../../components/FilePreview/FilePreview';
+
+import { useState } from 'react';
 import { useUserProfile } from '../../../hooks/useUserProfile';
 import { generateTag } from '../../../utils/generateTag';
-import FileCarousel from '../../../utils/FileCarousel/FileCarousel';
-import FilePreview from '../../../components/FilePreview/FilePreview';
 import { useAddReplyMutation } from '../../../store/postsApi';
 
 function PostReply({ authorTag, parentPostId }) {
   const [isElapsed, setIsElapsed] = useState(false);
+
   const { textareaRef, inputText, setInputText } = useTextarea();
-  const { filesPreview, handleFilesPreviewChange, handleFileDelete } =
-    useFilePicker();
   const { uid, photoURL } = useUserProfile();
-  const generatedId = generateTag();
   const [addReply] = useAddReplyMutation();
+  const {
+    filesPreview,
+    handleFilesPreviewChange,
+    handleFileDelete,
+    handlePickerReset,
+  } = useFilePicker();
+
+  const generatedId = generateTag();
 
   const replyPostData = {
     parentPostId,
@@ -34,6 +42,8 @@ function PostReply({ authorTag, parentPostId }) {
 
   const handleReplyPost = () => {
     addReply(replyPostData);
+    setInputText('');
+    handlePickerReset();
   };
 
   return (

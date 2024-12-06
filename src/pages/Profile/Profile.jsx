@@ -1,25 +1,28 @@
 import styles from './Profile.module.css';
-import { FaRegCalendarAlt } from 'react-icons/fa';
+
 import NavBar from './Navbar/NavBar';
-import { Outlet, useParams } from 'react-router-dom';
-import { useUserProfile } from '../../hooks/useUserProfile';
-import { transformDate } from '../../utils/transformDate';
 import defaultUserImg from '../../assets/defaultUser.png';
 import HeaderProfile from '../../components/ProfileComponents/HeaderProfile/HeaderProfile';
 import StatsProfile from '../../components/ProfileComponents/StatsProfile/StatsProfile';
 import ProfileEditBlock from '../../components/ProfileComponents/ProfileEditBlock/ProfileEditBlock';
-import { UserRequests } from '../../services/UserRequests';
-import { useEffect, useState } from 'react';
 import LoadingSpinner from '../../components/ui/LoadingSpinner/LoadingSpinner';
 import FollowBtn from '../../components/ui/FollowBtn/FollowBtn';
+
+import { FaRegCalendarAlt } from 'react-icons/fa';
+import { Outlet, useParams } from 'react-router-dom';
+import { useUserProfile } from '../../hooks/useUserProfile';
+import { transformDate } from '../../utils/transformDate';
+import { UserRequests } from '../../services/UserRequests';
+import { useEffect, useState } from 'react';
 import { FaLocationDot } from 'react-icons/fa6';
 
 function Profile() {
+  const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  
   const authUser = useUserProfile();
   const currentUserTag = useParams().tag;
   const isAuthedUser = authUser.tag === currentUserTag;
-  const [user, setUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (!isAuthedUser) {

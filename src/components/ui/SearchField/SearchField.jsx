@@ -1,5 +1,6 @@
-import { FaSearch } from 'react-icons/fa';
 import styles from './SearchField.module.css';
+
+import { FaSearch } from 'react-icons/fa';
 import { IoMdCloseCircle } from 'react-icons/io';
 
 function SearchField({ placeholderText, variant = 'primary', text, onChange }) {

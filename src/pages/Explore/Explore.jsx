@@ -1,8 +1,11 @@
-import { useState } from 'react';
-import SearchField from '../../components/ui/SearchField/SearchField';
 import styles from './Explore.module.css';
-import UserItem from '../../components/RightSide/WhoToFollow/UserItem/UserItem';
+
+import { useState } from 'react';
 import { useSearchUser } from '../../hooks/useSearchUser';
+
+import SearchField from '../../components/ui/SearchField/SearchField';
+import UserItem from '../../components/RightSide/WhoToFollow/UserItem/UserItem';
+import LoadingSpinner from '../../components/ui/LoadingSpinner/LoadingSpinner';
 
 function Explore() {
   const [searchText, setSearchText] = useState('');
@@ -19,6 +22,7 @@ function Explore() {
         />
       </header>
       <h1>
+        {isSearching && <LoadingSpinner />}
         {result &&
           result.map((user) => <UserItem key={user.uid} user={user} />)}
       </h1>

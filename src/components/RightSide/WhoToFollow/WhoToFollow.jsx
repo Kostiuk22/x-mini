@@ -1,15 +1,18 @@
-import { useEffect, useState } from 'react';
+import styles from './WhoToFollow.module.css';
+
 import ShowMoreBtn from '../../ui/ShowMoreBtn/ShowMoreBtn';
 import UserItem from './UserItem/UserItem';
-import styles from './WhoToFollow.module.css';
+
+import { useEffect, useState } from 'react';
 import { UserRequests } from '../../../services/UserRequests';
 import { useUserProfile } from '../../../hooks/useUserProfile';
 
 function WhoToFollow() {
-  const currentUserId = useUserProfile().uid;
   const [offerUsers, setOfferUsers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [usersLimit, setUsersLimit] = useState(3);
+  
+  const currentUserId = useUserProfile().uid;
 
   useEffect(() => {
     if (!currentUserId) return;

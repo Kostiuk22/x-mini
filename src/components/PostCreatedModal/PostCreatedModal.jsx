@@ -1,6 +1,7 @@
 import styles from './PostCreatedModal.module.css';
-import { AiOutlineClose } from 'react-icons/ai';
+
 import PostCreatedField from '../PostCreatedField/PostCreatedField';
+import { AiOutlineClose } from 'react-icons/ai';
 
 function PostCreatedModal({ modalRef, handleMenuClose }) {
   return (

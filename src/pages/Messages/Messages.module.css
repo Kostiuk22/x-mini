@@ -45,3 +45,24 @@
   margin: 32px 0;
   padding: 0 82px;
 }
+
+@media (max-width: 1399px) {
+  .messages {
+    width: 388px;
+  }
+}
+@media (max-width: 1092px) {
+  .messages {
+    width: 318px;
+  }
+}
+@media (max-width: 1002px) {
+  .messages {
+    width: 598px;
+  }
+}
+@media (max-width: 702px) {
+  .messages {
+    width: 100%;
+  }
+}

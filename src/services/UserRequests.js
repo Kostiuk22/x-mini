@@ -65,6 +65,53 @@ export const UserRequests = {
       return error;
     }
   },
+  getFollowingByTag: async function (tag) {
+    try {
+      const usersRef = collection(db, 'users');
+      const q = query(usersRef, where('tag', '==', tag));
+      const querySnapshot = await getDocs(q);
+      const userData = querySnapshot.docs[0].data();
+      let result = [];
+      if (userData.following.length !== 0) {
+        result = await this.getUsersByIds(userData.following);
+      }
+      return result;
+    } catch (error) {
+      toast.error(error.message);
+      return error;
+    }
+  },
+  getFollowersByTag: async function (tag) {
+    try {
+      const usersRef = collection(db, 'users');
+      const q = query(usersRef, where('tag', '==', tag));
+      const querySnapshot = await getDocs(q);
+      const userData = querySnapshot.docs[0].data();
+      let result = [];
+
+      if (userData.followers.length !== 0) {
+        result = await this.getUsersByIds(userData.followers);
+      }
+
+      return result;
+    } catch (error) {
+      toast.error(error.message);
+      return error;
+    }
+  },
+  getUsersByIds: async function (ids) {
+    try {
+      const usersRef = collection(db, 'users');
+      const q = query(usersRef, where('uid', 'in', ids));
+      const querySnapshot = await getDocs(q);
+      const result = [];
+      querySnapshot.forEach((doc) => result.push(doc.data()));
+      return result;
+    } catch (error) {
+      toast.error(error.message);
+      return error;
+    }
+  },
   getUserByTag: async function (tag) {
     try {
       const usersRef = collection(db, 'users');
@@ -109,7 +156,6 @@ export const UserRequests = {
         const data = user.data();
         tags.push(data.tag);
       });
-      console.log('tags', tags);
       return tags;
     } catch (error) {
       toast.error(error.message);
@@ -120,6 +166,7 @@ export const UserRequests = {
     try {
       const userRef = doc(db, 'users', userId);
       await updateDoc(userRef, { tag: newTag });
+
       dispatch(setNewTag(newTag));
       toast.success('Tag successfully changed ');
     } catch (error) {
@@ -144,6 +191,7 @@ export const UserRequests = {
   updateUserInfo: async function (data) {
     try {
       const userRef = doc(db, 'users', data.uid);
+      console.log(data)
       await updateDoc(userRef, data);
       toast.success('Info successfully changed');
     } catch (error) {

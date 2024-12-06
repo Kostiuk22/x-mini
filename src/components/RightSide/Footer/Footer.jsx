@@ -1,4 +1,5 @@
 import styles from './Footer.module.css';
+
 import FooterItem from './FooterItem./FooterItem';
 
 let footerItems = [

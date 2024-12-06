@@ -1,12 +1,49 @@
 .leftSide {
   width: 259px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+ 
 }
 
 .list {
-  padding: 0 8px;
-  margin-bottom: 15px;
+  width: 50px;
+}
+
+.list svg {
+  color: white;
+  font-size: 24px;
 }
 
 .btn {
-  padding: 0 8px;
+  padding-right: 12px;
+}
+
+@media (max-width: 1279px) {
+  .leftSide {
+    width: 72px;
+    align-items: center;
+  }
+  .btn {
+    padding: 0;
+    width: 50px;
+  }
+}
+@media (max-width: 1022px) {
+  .leftSide {
+    width: 60px;
+    padding: 0 4px;
+  }
+}
+@media (max-width: 1002px) {
+  .leftSide {
+    width: 72px;
+  }
+}
+@media (max-width: 614px) {
+  .leftSide {
+    width: 60px;
+    padding: 0 4px;
+  }
 }

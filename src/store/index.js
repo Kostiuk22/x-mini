@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { postsApi } from './postsApi';
 import userReducer from './user/slices';
 import chatsReducer from './messages/slices';
-import { postsApi } from './postsApi';
 
 const store = configureStore({
   reducer: {

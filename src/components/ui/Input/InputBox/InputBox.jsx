@@ -1,5 +1,5 @@
-import ErrorMessageField from '../../ErrorMessageField/ErrorMessageField';
 import styles from './InputBox.module.css';
+import ErrorMessageField from '../../ErrorMessageField/ErrorMessageField';
 
 function InputBox({
   children,

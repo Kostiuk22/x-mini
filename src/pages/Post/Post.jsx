@@ -1,4 +1,5 @@
 import styles from './Post.module.css';
+
 import HeaderTitle from '../../components/ui/HeaderTitle/HeaderTitle';
 import NickName from '../../components/ui/NickName/NickName';
 import PostInfo from './PostInfo';
@@ -11,6 +12,7 @@ import MoreBtn from '../../components/ui/MoreBtn/MoreBtn';
 import IsReposted from '../../components/ui/IsReposted/IsReposted';
 import useMenu from '../../hooks/useMenu';
 import ActionMenu from '../../components/ActionMenu/ActionMenu';
+import LoadingSpinner from '../../components/ui/LoadingSpinner/LoadingSpinner';
 import {
   getCurrentUserMenuActions,
   postMenuActions,
@@ -19,7 +21,6 @@ import { useDeletePostMutation, useGetPostQuery } from '../../store/postsApi';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useUserById } from '../../hooks/useUserById';
 import { useUserProfile } from '../../hooks/useUserProfile';
-import LoadingSpinner from '../../components/ui/LoadingSpinner/LoadingSpinner';
 import { useFollow } from '../../hooks/useFollow';
 
 function Post({ media, isReposted = false }) {
@@ -54,9 +55,9 @@ function Post({ media, isReposted = false }) {
 
   return (
     <div className={styles.postPage}>
-      <div className={`${styles.post} wrapper`}>
+      <HeaderTitle title="Post" />
+      <div className={styles.wrapper}>
         {isReposted && <IsReposted />}
-        <HeaderTitle title="Post" />
         <header className={styles.header}>
           <Avatar photoURL={author.photoURL} />
           <div className={styles.spaceBetween}>
@@ -93,6 +94,7 @@ function Post({ media, isReposted = false }) {
             countsReply: replies.length,
             postId: postId,
             likesLength: post.likes.length,
+            authorTag: author?.tag,
           }}
         />
         <SortReplies />

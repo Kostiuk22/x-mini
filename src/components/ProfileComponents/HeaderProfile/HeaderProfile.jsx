@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
 import styles from './HeaderProfile.module.css';
+
+import { Link } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 
-function HeaderProfile({ name }) {
+function HeaderProfile({ name, tag }) {
   return (
     <>
       <div className="stickyWrapper">
@@ -12,7 +13,7 @@ function HeaderProfile({ name }) {
           </Link>
           <div className={styles.title}>
             <h2>{name}</h2>
-            <p>35 posts</p>
+            {tag ? <p>@{tag}</p> : <p>35 posts</p>}
           </div>
         </header>
       </div>

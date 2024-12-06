@@ -1,5 +1,8 @@
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
+import { ToastContainer } from 'react-toastify';
+import { lazy, Suspense } from 'react';
+import { Provider } from 'react-redux';
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -7,8 +10,6 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 
-import Bookmarks from './pages/Bookmarks/Bookmarks';
-import Profile from './pages/Profile/Profile';
 import Replies from './pages/Profile/Replies/Replies';
 import RepostedPosts from './pages/Profile/RepostedPosts/RepostedPosts';
 import MessageSection from './components/MessageSection/MessageSection';
@@ -17,42 +18,82 @@ import Likes from './pages/Profile/Likes/Likes';
 import Home from './pages/Home/Home';
 import Explore from './pages/Explore/Explore';
 import Post from './pages/Post/Post';
-
-import MainLayout from './layouts/MainLayout';
-import MessagesLayout from './layouts/MessagesLayout';
-import SettingsLayout from './layouts/SettingsLayout';
 import Auth from './pages/Auth/Auth';
-import { Provider } from 'react-redux';
-import store from './store';
-import RootLayout from './layouts/RootLayout';
 import DefaultMessages from './pages/Messages/DefaultMessages/DefaultMessages';
 import ChangeTag from './pages/Settings/ChangeTag/ChangeTag';
 import ChangePassword from './pages/Settings/ChangePassword/ChangePassword';
-import { ToastContainer } from 'react-toastify';
+import Following from './pages/Profile/StatsWrapper/Following/Following';
+import SettingsLayout from './layouts/SettingsLayout';
+import store from './store';
+import RootLayout from './layouts/RootLayout';
+import LoadingSpinner from './components/ui/LoadingSpinner/LoadingSpinner';
+import Followers from './pages/Profile/StatsWrapper/Followers/Followers';
+
+const Bookmarks = lazy(() => import('./pages/Bookmarks/Bookmarks'));
+const Profile = lazy(() => import('./pages/Profile/Profile'));
+const StatsWrapper = lazy(() =>
+  import('./pages/Profile/StatsWrapper/StatsWrapper')
+);
+const MainLayout = lazy(() => import('./layouts/MainLayout'));
+const MessagesLayout = lazy(() => import('./layouts/MessagesLayout'));
+
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route path="/auth" element={<Auth />} />
-      <Route path="/x.com" element={<MainLayout />}>
-        <Route path="/x.com/home" element={<Home />} />
-        <Route path="/x.com/explore" element={<Explore />} />
-        <Route path="/x.com/i/bookmarks" element={<Bookmarks />} />
+      <Route
+        path="/x.com"
+        element={
+          <Suspense fallback={<LoadingSpinner />}>
+            <MainLayout />
+          </Suspense>
+        }
+      >
+        <Route path="home" element={<Home />} />
+        <Route path="explore" element={<Explore />} />
+        <Route
+          path="i/bookmarks"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <Bookmarks />
+            </Suspense>
+          }
+        />
 
-        <Route path="/x.com/messages" element={<MessagesLayout />}>
+        <Route
+          path="messages"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <MessagesLayout />
+            </Suspense>
+          }
+        >
           <Route index element={<DefaultMessages />} />
-          <Route path="/x.com/messages/:chatId" element={<MessageSection />} />
+          <Route path=":chatId" element={<MessageSection />} />
         </Route>
 
-        <Route path="/x.com/:tag" element={<Profile />}>
+        <Route
+          path=":tag"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <Profile />
+            </Suspense>
+          }
+        >
           <Route index element={<RepostedPosts />} />
-          <Route path="/x.com/:tag/with_replies" element={<Replies />} />
-          <Route path="/x.com/:tag/media" element={<Media />} />
-          <Route path="/x.com/:tag/likes" element={<Likes />} />
+          <Route path="with_replies" element={<Replies />} />
+          <Route path="media" element={<Media />} />
+          <Route path="likes" element={<Likes />} />
         </Route>
-        <Route path="/x.com/:tag/status/:postId" element={<Post />} />
+        <Route path=":tag/stats" element={<StatsWrapper />}>
+          <Route index element={<Following />} />
+          <Route path="following" element={<Following />} />
+          <Route path="followers" element={<Followers />} />
+        </Route>
+        <Route path=":tag/status/:postId" element={<Post />} />
 
-        <Route path="/x.com/settings" element={<SettingsLayout />}>
+        <Route path="settings" element={<SettingsLayout />}>
           <Route path="change_tag" element={<ChangeTag />} />
           <Route path="change_password" element={<ChangePassword />} />
         </Route>

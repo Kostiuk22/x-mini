@@ -1,7 +1,9 @@
-import { FaCheck } from 'react-icons/fa';
+import styles from './SearchedUser.module.css';
+
 import Avatar from '../ui/Avatar/Avatar';
 import NickName from '../ui/NickName/NickName';
-import styles from './SearchedUser.module.css';
+
+import { FaCheck } from 'react-icons/fa';
 
 function SearchedUser({ user, onClick, isSelected }) {
   const { tag, name, photoURL } = user;

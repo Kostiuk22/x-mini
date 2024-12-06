@@ -5,7 +5,7 @@ function BlueBtn({
   sizeBtn = 'fullWidth',
   onClick,
   type = 'button',
-  disabled = false, 
+  disabled = false,
 }) {
   let sizeClass = '';
 
@@ -14,7 +14,7 @@ function BlueBtn({
       sizeClass = styles.fullWidth;
       break;
     case 'big':
-      sizeClass = ''; 
+      sizeClass = styles.big;
       break;
     case 'small':
       sizeClass = styles.small;
@@ -25,8 +25,10 @@ function BlueBtn({
 
   return (
     <button
-      className={`${styles.btn} ${sizeClass} ${disabled ? styles.disabled : ''}`}
-      onClick={disabled ? undefined : onClick} 
+      className={`${styles.btn} ${sizeClass} ${
+        disabled ? styles.disabled : ''
+      }`}
+      onClick={disabled ? undefined : onClick}
       type={type}
       disabled={disabled}
     >

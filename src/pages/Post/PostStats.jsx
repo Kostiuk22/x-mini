@@ -1,8 +1,8 @@
 import styles from './PostStats.module.css';
-import { IoChatboxOutline } from 'react-icons/io5';
+
 //import { BiRepost } from 'react-icons/bi';
-import { FaBookmark, FaHeart, FaRegHeart } from 'react-icons/fa';
-import { RiShare2Line } from 'react-icons/ri';
+import { IoChatboxOutline } from 'react-icons/io5';
+import { FaBookmark, FaHeart, FaRegCopy, FaRegHeart } from 'react-icons/fa';
 import { useUserProfile } from '../../hooks/useUserProfile';
 import {
   useGetLikeStatusQuery,
@@ -10,21 +10,22 @@ import {
 } from '../../store/postsApi';
 import { useDispatch } from 'react-redux';
 import { toggleBookmarks } from '../../store/user/thunks';
+import { copyUrlToClipboard } from '../../utils/copyUrlToClipboard';
 
 function PostStats({ postStats }) {
+  const { countsReply, likesLength, postId, authorTag } = postStats;
   const dispatch = useDispatch();
-  const { countsReply, likesLength, postId } = postStats;
-  const { tag: userTag, bookmarks } = useUserProfile();
+  
+  const { tag: userTag, bookmarks, uid } = useUserProfile();
   const [toggleLike] = useToggleLikeMutation();
-  const { data: isLiked } = useGetLikeStatusQuery({ postId, userTag });
+  const { data: isLiked } = useGetLikeStatusQuery({ postId, uid });
   const isBookmarked = bookmarks.includes(postId);
-
 
   const handleLikeClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
 
-    toggleLike({ postId, userTag });
+    toggleLike({ postId, uid });
   };
 
   const handleToggleBookmark = (e) => {
@@ -64,9 +65,12 @@ function PostStats({ postStats }) {
           <FaBookmark size={20} className={styles.icon} />
         </div>
       </div>
-      <div className={styles.stat}>
+      <div
+        className={styles.stat}
+        onClick={(e) => copyUrlToClipboard(e, authorTag, postId)}
+      >
         <div className={styles.iconWrapper}>
-          <RiShare2Line size={24} className={styles.icon} />
+          <FaRegCopy size={24} className={styles.icon} />
         </div>
       </div>
     </div>

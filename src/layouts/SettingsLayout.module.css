@@ -1,5 +1,4 @@
 .settingsLayout {
-
 }
 
 .settingsLayoutOutlet {
@@ -10,4 +9,31 @@
   left: 451px;
   top: 0;
   border-right: 1px solid var(--main-grey-color);
+}
+
+@media (max-width: 1399px) {
+  .settingsLayoutOutlet {
+    left: 388px;
+  }
+}
+@media (max-width: 1092px) {
+  .settingsLayoutOutlet {
+    left: 318px;
+  }
+}
+@media (max-width: 1002px) {
+  .settingsLayoutOutlet {
+    left: 0;
+    
+  }
+}
+
+@media (max-width: 702px) {
+  .settingsLayout {
+    width: 100%;
+  }
+
+  .settingsLayoutOutlet {
+    width: 100%;
+  }
 }

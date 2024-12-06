@@ -1,7 +1,28 @@
 .settings {
-    width: 450px;
+  width: 450px;
 }
 
 .search {
-    padding: 8px;
+  padding: 8px;
+}
+
+@media (max-width: 1399px) {
+  .settings {
+    width: 388px;
+  }
+}
+@media (max-width: 1092px) {
+  .settings {
+    width: 318px;
+  }
+}
+@media (max-width: 1002px) {
+  .settings {
+    width: 598px;
+  }
+}
+@media (max-width: 702px) {
+  .settings {
+    width: 100%;
+  }
 }

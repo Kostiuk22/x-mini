@@ -1,17 +1,25 @@
-import { NavLink } from 'react-router-dom';
 import styles from './NavItem.module.css';
+
+import { NavLink } from 'react-router-dom';
+
 import { useUserProfile } from '../../../../hooks/useUserProfile';
+import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 
 function NavItem({ name, children }) {
-  let path = name.toLowerCase();
+  const [currentWidth] = useWindowWidth();
   const { tag } = useUserProfile();
+
+  const isMobile = currentWidth <= 1002;
+  let path = name.toLowerCase();
 
   if (path === 'bookmarks') {
     path = 'i/bookmarks';
   } else if (path === 'profile') {
     path = tag;
-  } else if (path === 'settings') {
+  } else if (path === 'settings' && !isMobile) {
     path = 'settings/change_tag';
+  } else if (path === 'settings' && isMobile) {
+    path = 'settings';
   } else if (path === '') {
     path = 'home';
   }

@@ -23,7 +23,10 @@ function useFilePicker() {
     setFilesPreview((prev) => prev.filter((el) => el.fileId !== id));
   };
 
-  return { filesPreview, handleFilesPreviewChange, handleFileDelete };
+  const handlePickerReset = () => {
+    setFilesPreview([]);
+  };
+  return { filesPreview, handleFilesPreviewChange, handleFileDelete, handlePickerReset };
 }
 
 export default useFilePicker;

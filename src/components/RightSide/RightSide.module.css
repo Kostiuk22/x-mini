@@ -7,12 +7,12 @@
   gap: 12px;
 
   overflow-y: auto;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .rightSide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari та інші Webkit браузери */
+  display: none;
 }
 
 .sticky {
@@ -21,4 +21,16 @@
   padding-top: 4px;
   background-color: var(--main-black-color);
   z-index: 10;
+}
+
+@media (max-width: 1092px) {
+  .rightSide {
+    width: 290px;
+  }
+}
+
+@media (max-width: 1002px) {
+  .rightSide {
+    display: none;
+  }
 }

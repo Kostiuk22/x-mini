@@ -1,8 +1,9 @@
-import { useParams } from 'react-router-dom';
 import LoadingSpinner from '../../../components/ui/LoadingSpinner/LoadingSpinner';
 import PostPreview from '../../../components/PostPreview/PostPreview';
-import { useGetLikedPostsByUserQuery } from '../../../store/postsApi';
 import InfoBlock from '../../../components/ui/InfoBlock/InfoBlock';
+
+import { useGetLikedPostsByUserQuery } from '../../../store/postsApi';
+import { useParams } from 'react-router-dom';
 
 function Likes() {
   const userTag = useParams().tag;

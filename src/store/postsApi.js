@@ -121,24 +121,24 @@ export const postsApi = createApi({
     }),
 
     toggleLike: builder.mutation({
-      async queryFn({ postId, userTag }) {
+      async queryFn({ postId, uid }) {
         try {
-          const isLiked = await PostRequests.toggleLike({ postId, userTag });
+          const isLiked = await PostRequests.toggleLike({ postId, uid });
           return { data: isLiked };
         } catch (error) {
           return { error };
         }
       },
-      invalidatesTags: (result, error, { postId, userTag }) => [
+      invalidatesTags: (result, error, { postId, uid }) => [
         { type: 'Posts', id: postId },
-        { type: 'LikedPosts', id: userTag },
+        { type: 'LikedPosts', id: uid },
       ],
     }),
 
     getLikeStatus: builder.query({
-      async queryFn({ postId, userTag }) {
+      async queryFn({ postId, uid }) {
         try {
-          const isLiked = await PostRequests.getLikeStatus({ postId, userTag });
+          const isLiked = await PostRequests.getLikeStatus({ postId, uid });
           return { data: isLiked };
         } catch (error) {
           return { error };

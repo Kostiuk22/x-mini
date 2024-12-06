@@ -116,7 +116,7 @@ export const PostRequests = {
       return error;
     }
   },
-  toggleLike: async ({ postId, userTag }) => {
+  toggleLike: async ({ postId, uid }) => {
     const postRef = doc(db, 'posts', postId);
     try {
       const postSnap = await getDoc(postRef);
@@ -124,13 +124,13 @@ export const PostRequests = {
         const postData = postSnap.data();
         const likes = postData.likes || [];
 
-        if (likes.includes(userTag)) {
+        if (likes.includes(uid)) {
           await updateDoc(postRef, {
-            likes: arrayRemove(userTag),
+            likes: arrayRemove(uid),
           });
         } else {
           await updateDoc(postRef, {
-            likes: arrayUnion(userTag),
+            likes: arrayUnion(uid),
           });
         }
       }
@@ -139,14 +139,14 @@ export const PostRequests = {
       return error;
     }
   },
-  getLikeStatus: async ({ postId, userTag }) => {
+  getLikeStatus: async ({ postId, uid }) => {
     const postRef = doc(db, 'posts', postId);
     try {
       const postSnap = await getDoc(postRef);
       if (postSnap.exists()) {
         const postData = postSnap.data();
         const likes = postData.likes || [];
-        return likes.includes(userTag);
+        return likes.includes(uid);
       } else {
         return false;
       }

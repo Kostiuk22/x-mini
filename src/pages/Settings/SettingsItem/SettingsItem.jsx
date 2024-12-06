@@ -1,5 +1,6 @@
-import { NavLink } from 'react-router-dom';
 import styles from './SettingsItem.module.css';
+
+import { NavLink } from 'react-router-dom';
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
 function SettingsItem({ text, path }) {

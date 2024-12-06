@@ -7,6 +7,30 @@
 .header {
   display: flex;
   height: 53px;
+  gap: 12px;
+  align-items: center;
+}
+
+.exitBtn {
+  min-width: 34px;
+  height: 34px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.exitBtn:hover {
+  background-color: rgb(29, 28, 28);
+}
+
+.spaceBetween {
+  width: 100%;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -82,12 +106,11 @@
   overflow-y: scroll; /* Always allow scrolling */
   display: flex;
   flex-direction: column;
-  scrollbar-width:none;
+  scrollbar-width: none;
 }
 .chat::-webkit-scrollbar {
   display: none; /* Hides the scrollbar */
 }
-
 
 .inputBlock {
   border-top: 1px solid var(--secondary-grey-color);

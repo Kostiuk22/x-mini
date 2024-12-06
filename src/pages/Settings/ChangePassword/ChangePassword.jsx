@@ -1,14 +1,18 @@
-import { useForm } from 'react-hook-form';
+import styles from './ChangePassword.module.css';
+
 import BlueBtn from '../../../components/ui/BlueBtn/BlueBtn';
 import InputBox from '../../../components/ui/Input/InputBox/InputBox';
-import styles from './ChangePassword.module.css';
+
+import { useForm } from 'react-hook-form';
 import { UserRequests } from '../../../services/UserRequests';
-import { EmailAuthProvider } from 'firebase/auth/web-extension';
-import { auth } from '../../../firebase/firebase';
 import { getAuth } from 'firebase/auth';
+import { useWindowWidth } from '../../../hooks/useWindowWidth';
+import { Link } from 'react-router-dom';
+import { IoArrowBack } from 'react-icons/io5';
 
 function ChangePassword() {
   const user = getAuth().currentUser;
+  const [curWidth] = useWindowWidth();
   const isGoogleUser = user.providerData.some(
     (provider) => provider.providerId === 'google.com'
   );
@@ -28,19 +32,20 @@ function ChangePassword() {
 
   const onFormSubmit = async (data) => {
     const { currentPassword, newPassword } = data;
-    const user = auth.currentUser;
-    const credential = EmailAuthProvider.credential(
-      user.email,
-      currentPassword
-    );
-    console.log('credantial, ', credential);
     await UserRequests.changePassword(currentPassword, newPassword);
   };
 
   if (isGoogleUser)
     return (
       <div className={styles.head}>
-        <h2>Change your password</h2>
+        <div className={styles.header}>
+          {curWidth <= 1002 && (
+            <Link to={'..'} className={styles.exitBtn}>
+              <IoArrowBack />
+            </Link>
+          )}
+          <h2>Change your password</h2>
+        </div>
         <h5>
           You signed in using Google. Password change is managed through your
           Google Account.
@@ -50,7 +55,12 @@ function ChangePassword() {
 
   return (
     <form onSubmit={handleSubmit(onFormSubmit)}>
-      <div className={styles.head}>
+      <div className={styles.header}>
+        {curWidth <= 1002 && (
+          <Link to={'..'} className={styles.exitBtn}>
+            <IoArrowBack />
+          </Link>
+        )}
         <h2>Change your password</h2>
       </div>
       <div className={styles.currentPassword}>

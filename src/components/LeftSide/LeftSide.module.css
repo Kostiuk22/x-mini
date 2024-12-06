@@ -1,10 +1,35 @@
 .leftSide {
   width: 259px;
-
   top: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-right: 8px;
+  padding: 0 8px;
+}
+
+@media (max-width: 1279px) {
+  .leftSide {
+    width: 88px;
+  }
+}
+@media (max-width: 1022px) {
+  .leftSide {
+    width: 68px;
+    padding: 0 4px;
+  }
+}
+@media (max-width: 1002px) {
+  .leftSide {
+    width: 72px;
+  }
+}
+@media (max-width: 614px) {
+  .leftSide {
+    width: 68px;
+    padding: 0 4px;
+  }
+}
+@media (max-width: 499px) {
+  
 }

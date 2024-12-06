@@ -1,7 +1,8 @@
+import styles from './FollowCard.module.css';
+
 import MoreBtn from '../ui/MoreBtn/MoreBtn';
 import NickName from '../ui/NickName/NickName';
 import FollowBtn from '../ui/FollowBtn/FollowBtn';
-import styles from './FollowCard.module.css';
 
 function FollowCard({ status = 'Follow' }) {
   return (

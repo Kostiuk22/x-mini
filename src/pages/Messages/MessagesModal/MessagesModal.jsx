@@ -1,22 +1,25 @@
-import { IoMdClose } from 'react-icons/io';
 import styles from './MessagesModal.module.css';
+
 import HeaderTitle from '../../../components/ui/HeaderTitle/HeaderTitle';
 import SearchField from '../../../components/ui/SearchField/SearchField';
-import { useState } from 'react';
-import { useSearchUser } from '../../../hooks/useSearchUser';
 import LoadingSpinner from '../../../components/ui/LoadingSpinner/LoadingSpinner';
 import SearchedUser from '../../../components/SearchedUser/SearchedUser';
+
+import { IoMdClose } from 'react-icons/io';
+import { useState } from 'react';
+import { useSearchUser } from '../../../hooks/useSearchUser';
 import { MessagesRequests } from '../../../services/MessagesRequests';
 import { useUserProfile } from '../../../hooks/useUserProfile';
 import { useDispatch } from 'react-redux';
 import { setChatId } from '../../../store/messages/slices';
 
 function MessagesModal({ modalRef, handleMenuClose }) {
-  const dispatch = useDispatch();
-  const currentUserId = useUserProfile().uid;
   const [searchText, setSearchText] = useState('');
-  const [result, isSearching] = useSearchUser(searchText);
   const [selectedUser, setSelectedUser] = useState(null);
+  const dispatch = useDispatch();
+  
+  const currentUserId = useUserProfile().uid;
+  const [result, isSearching] = useSearchUser(searchText);
 
   const toggleSelectedUser = (user) => {
     if (selectedUser === user) {

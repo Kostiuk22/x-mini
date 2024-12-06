@@ -100,3 +100,30 @@
   display: flex;
   justify-content: flex-end;
 }
+
+@media (max-width:702px) {
+  .profile{
+    width: 100%;
+  }
+
+  .main{
+    min-height: 337px;
+  }
+
+  .backImg {
+    height: 125px;
+  }
+
+  .bigImg{
+    width: 100px;
+    height: 100px;
+    top: -50px;
+  }
+  
+  .editBlock {
+    height: 45px;
+  }
+  .bio {
+    width: 100%;
+  }
+}

@@ -1,5 +1,6 @@
-import SettingsItem from '../SettingsItem/SettingsItem';
 import styles from './SettingsList.module.css';
+
+import SettingsItem from '../SettingsItem/SettingsItem';
 
 const settingsArr = [
   { name: 'Change tag', path: 'change_tag' },

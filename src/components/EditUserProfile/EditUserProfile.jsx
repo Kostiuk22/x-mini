@@ -1,19 +1,22 @@
-import { useUserProfile } from '../../hooks/useUserProfile';
 import styles from './EditUserProfile.module.css';
-import { IoMdClose } from 'react-icons/io';
-import defaultImg from '../../assets/defaultUser.png';
-import { MdOutlineAddAPhoto } from 'react-icons/md';
-import Input from '../ui/Input/Input';
-import { useForm } from 'react-hook-form';
-import InputBox from '../ui/Input/InputBox/InputBox';
-import useFilePicker from '../../hooks/useFilePicker';
+
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
+import { IoMdClose } from 'react-icons/io';
+import { MdOutlineAddAPhoto } from 'react-icons/md';
+import { useForm } from 'react-hook-form';
+
 import { updateProfile } from '../../store/user/thunks';
+import { useUserProfile } from '../../hooks/useUserProfile';
+import useFilePicker from '../../hooks/useFilePicker';
+import defaultImg from '../../assets/defaultUser.png';
+import Input from '../ui/Input/Input';
+import InputBox from '../ui/Input/InputBox/InputBox';
 
 function EditUserProfile({ handleMenuClose, modalRef }) {
-  const { name, photoURL, uid, bio, location } = useUserProfile();
+  const selectedPhotoRef = useRef(null);
   const dispatch = useDispatch();
+  const { name, photoURL, uid, bio, location } = useUserProfile();
   const {
     register,
     handleSubmit,
@@ -23,8 +26,8 @@ function EditUserProfile({ handleMenuClose, modalRef }) {
     defaultValues: { name, bio, location },
     mode: 'onChange',
   });
+
   const { filesPreview, handleFilesPreviewChange } = useFilePicker();
-  const selectedPhotoRef = useRef(null);
   const lastFile = filesPreview[filesPreview.length - 1] || null;
 
   const renderedPhoto = lastFile ? (

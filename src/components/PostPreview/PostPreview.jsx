@@ -1,20 +1,22 @@
-import { Link, useNavigate } from 'react-router-dom';
+import styles from './PostPreview.module.css';
+
 import Avatar from '../ui/Avatar/Avatar';
 import MoreBtn from '../ui/MoreBtn/MoreBtn';
 import NickName from '../ui/NickName/NickName';
 import ReplyTabList from '../ui/ReplyTabList/ReplyTabList';
-import styles from './PostPreview.module.css';
 import useMenu from '../../hooks/useMenu';
 import ActionMenu from '../ActionMenu/ActionMenu';
+import LoadingSpinner from '../ui/LoadingSpinner/LoadingSpinner';
+
 import {
   getCurrentUserMenuActions,
   postMenuActions,
 } from '../../utils/menuActions';
 import { transformDate } from '../../utils/transformDate';
-import { useUserProfile } from '../../hooks/useUserProfile';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDeletePostMutation } from '../../store/postsApi';
+import { useUserProfile } from '../../hooks/useUserProfile';
 import { useUserById } from '../../hooks/useUserById';
-import LoadingSpinner from '../ui/LoadingSpinner/LoadingSpinner';
 import { useFollow } from '../../hooks/useFollow';
 
 function PostPreview({ post }) {
@@ -120,6 +122,7 @@ function PostPreview({ post }) {
             likesLength: likes.length,
             numberOfViews: numberOfViews,
             countsReply: replies.length,
+            authorTag: author?.tag,
           }}
         />
       </div>

@@ -1,5 +1,6 @@
-import FollowStats from '../ui/FollowStats/FollowStats';
 import styles from './UserCard.module.css';
+
+import FollowStats from '../ui/FollowStats/FollowStats';
 
 function UserCard({ onMouseEnter, onMouseLeave }) {
   return (

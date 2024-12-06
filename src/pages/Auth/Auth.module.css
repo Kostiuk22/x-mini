@@ -70,7 +70,7 @@
 }
 
 .switchBtn:hover {
-    background-color: rgb(230, 230, 230);
+  background-color: rgb(230, 230, 230);
 }
 
 .content form {
@@ -78,14 +78,15 @@
   flex-direction: column;
   gap: 15px;
   margin-bottom: 12px;
+  width: 300px;
 }
 
 .input:-webkit-autofill,
 .input:-webkit-autofill:hover,
 .input:-webkit-autofill:focus,
 .input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px black inset !important; /* або інший колір бекграунду */
-    -webkit-text-fill-color: white !important; /* колір тексту всередині інпуту */
+  -webkit-box-shadow: 0 0 0 30px black inset !important; /* або інший колір бекграунду */
+  -webkit-text-fill-color: white !important; /* колір тексту всередині інпуту */
 }
 
 .input {
@@ -103,7 +104,6 @@
   outline: none;
   border-color: var(--main-blue-color);
 }
-
 
 .authBtn {
   padding: 0 12px;
@@ -124,7 +124,48 @@
   background-color: #031018;
 }
 
-.input[type="date"]{
+.input[type='date'] {
   color: #757575;
 }
 
+@media (max-width: 950px) {
+  .left svg {
+    width: 341px;
+    height: 308px;
+  }
+}
+@media (max-width: 800px) {
+  .auth {
+    flex-direction: column;
+  }
+  .left {
+    width: 100%;
+    padding-top: 45px;
+  }
+  .left svg {
+    width: 81px;
+    height: 48px;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .content {
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+  }
+
+  .content h1 {
+    font-size: 44px;
+    height: auto;
+    margin: 28px 0 28px;
+  }
+}
+
+@media (max-width: 423px) {
+  .content h2 {
+    text-align: center;
+  }
+}

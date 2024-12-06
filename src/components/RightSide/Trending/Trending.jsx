@@ -1,6 +1,7 @@
-import ShowMoreBtn from '../../ui/ShowMoreBtn/ShowMoreBtn';
 import styles from './Trending.module.css';
+
 import TrendItem from './TrendItem/TrendItem';
+//import ShowMoreBtn from '../../ui/ShowMoreBtn/ShowMoreBtn';
 
 function Trending() {
   return (
@@ -16,7 +17,7 @@ function Trending() {
       <TrendItem />
       <TrendItem />
       <TrendItem />
-      <ShowMoreBtn />
+      {/* <ShowMoreBtn /> */}
     </div>
   );
 }

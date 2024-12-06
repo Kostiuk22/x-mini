@@ -1,8 +1,10 @@
-import { createPortal } from 'react-dom';
+import styles from './ProfileEditBlock.module.css';
+
 import useClickOutside from '../../../hooks/useClickOutside';
 import useMenu from '../../../hooks/useMenu';
 import EditUserProfile from '../../EditUserProfile/EditUserProfile';
-import styles from './ProfileEditBlock.module.css';
+
+import { createPortal } from 'react-dom';
 import { useRef } from 'react';
 
 function ProfileEditBlock() {

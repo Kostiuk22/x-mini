@@ -1,8 +1,10 @@
-import { useLocation } from 'react-router-dom';
-import Footer from './Footer/Footer';
 import styles from './RightSide.module.css';
+
+import Footer from './Footer/Footer';
 import Trending from './Trending/Trending';
 import WhoToFollow from './WhoToFollow/WhoToFollow';
+
+import { useLocation } from 'react-router-dom';
 
 function RightSide() {
   const curLocation = useLocation().pathname;

@@ -1,0 +1,14 @@
+.inputWrapper {
+  position: relative;
+}
+
+.togglePassword {
+  position: absolute;
+  right: 0;
+  height: 40px;
+  width: 30px;
+}
+
+.togglePassword svg {
+    font-size: 16px;
+}

@@ -25,6 +25,20 @@
   padding: 0 16px;
 }
 
+.big {
+  width: 100%;
+}
+
+.big h3 {
+  font-size: 17px;
+  
+}
+
+.big h3 svg {
+  font-size: 25px;
+}
+
+
 .fullWidth {
   width: 100%;
 }
@@ -44,3 +58,12 @@
   cursor: initial;
 }
 
+
+@media (max-width: 1279px) {
+  .big{
+    max-width: 50px;
+    height: 50px;
+    padding: 0;
+  }
+  
+}

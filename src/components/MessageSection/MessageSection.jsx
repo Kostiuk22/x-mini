@@ -1,21 +1,26 @@
 import styles from './MessageSection.module.css';
-import NickName from '../ui/NickName/NickName';
-import { IoMdInformationCircleOutline } from 'react-icons/io';
-import { useParams } from 'react-router-dom';
-import { useUserProfile } from '../../hooks/useUserProfile';
+
 import { useEffect, useRef, useState } from 'react';
-import { MessagesRequests } from '../../services/MessagesRequests';
-import defaultImg from '../../assets/defaultUser.png';
-import { transformDate } from '../../utils/transformDate';
 import { useSelector } from 'react-redux';
+import { IoMdInformationCircleOutline } from 'react-icons/io';
+import { Link, useParams } from 'react-router-dom';
+
+import Msg from './Msg/Msg';
+import NickName from '../ui/NickName/NickName';
+import { IoArrowBack } from 'react-icons/io5';
+import defaultImg from '../../assets/defaultUser.png';
 import { BsEmojiSmile } from 'react-icons/bs';
 import { TbSend2 } from 'react-icons/tb';
 import EmojiPicker from 'emoji-picker-react';
+import { transformDate } from '../../utils/transformDate';
+import { MessagesRequests } from '../../services/MessagesRequests';
 import useClickOutside from '../../hooks/useClickOutside';
-import Msg from './Msg/Msg';
+import { useUserProfile } from '../../hooks/useUserProfile';
+import { useWindowWidth } from '../../hooks/useWindowWidth';
 
 function MessageSection() {
   const [inputText, setInputText] = useState('');
+  const [curWidth] = useWindowWidth();
 
   const [showPikerEmoji, setShowPikerEmoji] = useState(false);
   const pickerEmojiRef = useRef(null);
@@ -32,7 +37,7 @@ function MessageSection() {
   const endRef = useRef(null);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth" });
+    endRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [chat?.messages]);
 
   useEffect(() => {
@@ -44,6 +49,14 @@ function MessageSection() {
       unSubChat();
     };
   }, [chatId, uid]);
+
+  const handleKeyDown = (e) => {
+    console.log(e)
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
 
   const handleSendMessage = async () => {
     await MessagesRequests.sendMessage({
@@ -59,9 +72,16 @@ function MessageSection() {
     <div className={styles.messageSection}>
       <div className={styles.box}>
         <div className={styles.header}>
-          <h3>{receiverData?.name}</h3>
-          <div className={styles.btn}>
-            <IoMdInformationCircleOutline size={20} />
+          {curWidth <= 1002 && (
+            <Link to={'..'} className={styles.exitBtn}>
+              <IoArrowBack />
+            </Link>
+          )}
+          <div className={styles.spaceBetween}>
+            <h3>{receiverData?.name}</h3>
+            <div className={styles.btn}>
+              <IoMdInformationCircleOutline size={20} />
+            </div>
           </div>
         </div>
         <div className={styles.details}>
@@ -106,6 +126,7 @@ function MessageSection() {
             placeholder="Start a new message"
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
           <button
             className={styles.icon}

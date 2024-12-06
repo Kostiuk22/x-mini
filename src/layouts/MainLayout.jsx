@@ -1,12 +1,13 @@
 import styles from './MainLayout.module.css';
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
+
 import LeftSide from '../components/LeftSide/LeftSide';
 import Main from '../components/Main/Main';
 import RightSide from '../components/RightSide/RightSide';
-import DefaultMessages from '../pages/Messages/DefaultMessages/DefaultMessages';
+import LoadingSpinner from '../components/ui/LoadingSpinner/LoadingSpinner';
+
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import LoadingSpinner from '../components/ui/LoadingSpinner/LoadingSpinner';
 
 function MainLayout() {
   const curLocation = useLocation().pathname;
@@ -14,7 +15,6 @@ function MainLayout() {
   const isLoadingUserState = useSelector((state) => state.user.isLoading);
   const isMessagesDfltRoute = curLocation.split('/').includes('messages');
   const isSettingsDfltRoute = curLocation.split('/').includes('settings');
- /*  const isMessagesRoute = curLocation.split('/').length < 4; */
 
   useEffect(() => {
     if (curLocation === '/x.com') {
@@ -31,7 +31,6 @@ function MainLayout() {
         <div className="container">
           <Outlet />
         </div>
-        {/* {isMessagesDfltRoute && isMessagesRoute && <DefaultMessages />} */}
         {!isMessagesDfltRoute && !isSettingsDfltRoute && <RightSide />}
       </Main>
     </div>

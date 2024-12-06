@@ -1,12 +1,13 @@
-import { useRef, useState, useEffect } from 'react';
 import styles from './FileCarousel.module.css';
+
+import { useRef, useState, useEffect } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 function FileCarousel({ children }) {
-  const carouselRef = useRef(null);
-
   const [scrollPos, setScrollPos] = useState(0);
   const [hasMultipleChildren, setHasMultipleChildren] = useState(false);
+
+  const carouselRef = useRef(null);
 
   const scrollLeft = () => {
     carouselRef.current.scrollBy({ left: -523, behavior: 'smooth' });
@@ -24,7 +25,6 @@ function FileCarousel({ children }) {
   };
 
   useEffect(() => {
-  
     const checkChildren = () => {
       const carousel = carouselRef.current;
       if (carousel) {

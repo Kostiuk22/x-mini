@@ -2,11 +2,32 @@
 }
 
 .messagesLayoutOutlet {
-    position: absolute;
-    z-index: 600;
-    width: 599px;
-    height: 100vh;
-    left: 448px;
-    top: 0;
-    border-right: 1px solid var(--main-grey-color);
+  position: absolute;
+  z-index: 600;
+  width: 599px;
+  height: 100vh;
+  left: 448px;
+  top: 0;
+  border-right: 1px solid var(--main-grey-color);
+}
+
+@media (max-width: 1399px) {
+  .messagesLayoutOutlet {
+    left: 388px;
+  }
+}
+@media (max-width: 1092px) {
+  .messagesLayoutOutlet {
+    left: 318px;
+  }
+}
+@media (max-width: 1002px) {
+  .messagesLayoutOutlet {
+    left: 0;
+    width: 100%;
+  }
+
+  .messagesLayout {
+    width: 100%;
+  }
 }

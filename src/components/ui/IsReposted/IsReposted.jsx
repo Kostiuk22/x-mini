@@ -1,5 +1,5 @@
-import { BiRepost } from 'react-icons/bi';
 import styles from './IsReposted.module.css';
+import { BiRepost } from 'react-icons/bi';
 
 function IsReposted() {
   return (

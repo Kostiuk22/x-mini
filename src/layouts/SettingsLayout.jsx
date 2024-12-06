@@ -1,14 +1,25 @@
 import styles from './SettingsLayout.module.css';
-import { Outlet } from 'react-router-dom';
+
 import Settings from '../pages/Settings/Settings';
 
+import { Outlet, useLocation } from 'react-router-dom';
+import { useWindowWidth } from '../hooks/useWindowWidth';
+
 function SettingsLayout() {
+  const [currentWidth] = useWindowWidth();
+  const isMobile = currentWidth <= 1002;
+  const location = useLocation();
+  const isMainRoute = location.pathname === '/x.com/settings';
+
   return (
     <div className={styles.settingsLayout}>
-      <Settings />
-      <div className={styles.settingsLayoutOutlet}>
-        <Outlet />
-      </div>
+      {(isMainRoute || !isMobile) && <Settings />}
+
+      {(!isMainRoute || !isMobile) && (
+        <div className={styles.settingsLayoutOutlet}>
+          <Outlet />
+        </div>
+      )}
     </div>
   );
 }

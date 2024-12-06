@@ -1,20 +1,22 @@
 import styles from './Bookmarks.module.css';
+
 import InfoBlock from '../../components/ui/InfoBlock/InfoBlock';
 import MoreBtn from '../../components/ui/MoreBtn/MoreBtn';
 import ActionMenu from '../../components/ActionMenu/ActionMenu';
 import useMenu from '../../hooks/useMenu';
+import PostPreview from '../../components/PostPreview/PostPreview';
+
 import { bookmarksMenuActions } from '../../utils/menuActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { ProfileRequests } from '../../services/ProfileRequests';
-import PostPreview from '../../components/PostPreview/PostPreview';
 import { useUserProfile } from '../../hooks/useUserProfile';
 
 function Bookmarks() {
+  const [bookmarks, setBookmarks] = useState([]);
   const dispatch = useDispatch();
   const userId = useUserProfile().uid;
   const { isMenuOpen, handleMenuOpen, handleMenuClose } = useMenu();
-  const [bookmarks, setBookmarks] = useState([]);
   const bookmarkedPostsId = useSelector(
     (state) => state.user.userProfile.bookmarks
   );

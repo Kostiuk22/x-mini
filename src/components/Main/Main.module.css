@@ -2,7 +2,24 @@
   position: relative;
   display: flex;
   gap: 32px;
-  min-height: 100vh;
+  height: 100vh;
   width: 1050px;
   overflow-y: hidden;
+}
+
+@media (max-width: 1092px) {
+  .main {
+    width: 920px;
+  }
+}
+@media (max-width: 1002px) {
+  .main {
+    width: 600px;
+  }
+}
+
+@media (max-width: 702px) {
+  .main {
+    width: 100%;
+  }
 }

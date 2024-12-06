@@ -1,8 +1,10 @@
 import styles from './Auth.module.css';
+
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { googleAuth, login, register } from '../../store/user/thunks';
 import { useForm } from 'react-hook-form';
+
 import Input from '../../components/ui/Input/Input';
 
 function Auth() {

@@ -1,23 +1,27 @@
 import styles from './NavList.module.css';
+
+import { useRef } from 'react';
+import { createPortal } from 'react-dom';
 import {
   FaHome,
   FaSearch,
-  FaEnvelope,
-  FaBookmark,
-  FaUser,
+  FaRegBookmark,
+  FaRegEnvelope,
+  FaRegUser,
 } from 'react-icons/fa';
+import { PiPencilLine } from 'react-icons/pi';
 import { MdOutlineSettings } from 'react-icons/md';
 
 import NavItem from '../NavItem/NavItem';
+import PostCreatedModal from '../../../PostCreatedModal/PostCreatedModal';
 import BlueBtn from '../../../ui/BlueBtn/BlueBtn';
 import useMenu from '../../../../hooks/useMenu';
+import { useWindowWidth } from '../../../../hooks/useWindowWidth';
 import useClickOutside from '../../../../hooks/useClickOutside';
-import PostCreatedModal from '../../../PostCreatedModal/PostCreatedModal';
-import { useRef } from 'react';
-import { createPortal } from 'react-dom';
 
 function NavList() {
   const modalRef = useRef(null);
+  const [currentWidth] = useWindowWidth();
   const { isMenuOpen, handleMenuOpen, handleMenuClose } = useMenu();
   useClickOutside(modalRef, handleMenuClose);
 
@@ -25,26 +29,28 @@ function NavList() {
     <div className={styles.leftSide}>
       <nav className={styles.list}>
         <NavItem name="Home">
-          <FaHome color="white" size={24} />
+          <FaHome />
         </NavItem>
         <NavItem name="Explore">
-          <FaSearch color="white" size={24} />
+          <FaSearch />
         </NavItem>
         <NavItem name="Messages">
-          <FaEnvelope color="white" size={24} />
+          <FaRegEnvelope />
         </NavItem>
         <NavItem name="Bookmarks">
-          <FaBookmark color="white" size={24} />
+          <FaRegBookmark />
         </NavItem>
         <NavItem name="Profile">
-          <FaUser color="white" size={24} />
+          <FaRegUser />
         </NavItem>
         <NavItem name="Settings">
           <MdOutlineSettings color="white" size={28} />
         </NavItem>
       </nav>
       <div className={styles.btn}>
-        <BlueBtn onClick={handleMenuOpen}>Post</BlueBtn>
+        <BlueBtn sizeBtn="big" onClick={handleMenuOpen}>
+          {currentWidth <= 1279 ? <PiPencilLine /> : 'Post'}
+        </BlueBtn>
       </div>
       {isMenuOpen &&
         createPortal(

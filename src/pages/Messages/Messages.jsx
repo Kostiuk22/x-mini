@@ -1,12 +1,14 @@
 import styles from './Messages.module.css';
-import { TbMessage2Plus } from 'react-icons/tb';
+
 import InfoBlock from '../../components/ui/InfoBlock/InfoBlock';
 import BlueBtn from '../../components/ui/BlueBtn/BlueBtn';
 import MessageItem from '../../components/MessageItem/MessageItem';
-import { useEffect, useRef } from 'react';
 import useMenu from '../../hooks/useMenu';
 import useClickOutside from '../../hooks/useClickOutside';
 import MessagesModal from './MessagesModal/MessagesModal';
+
+import { TbMessage2Plus } from 'react-icons/tb';
+import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { MessagesRequests } from '../../services/MessagesRequests';
 import { useUserProfile } from '../../hooks/useUserProfile';
@@ -15,10 +17,12 @@ import { setUserChats } from '../../store/messages/slices';
 
 function Messages() {
   const modalRef = useRef(null);
-  const curUserId = useUserProfile().uid;
   const dispatch = useDispatch();
+
+  const curUserId = useUserProfile().uid;
   const { isMenuOpen, handleMenuOpen, handleMenuClose } = useMenu();
   useClickOutside(modalRef, handleMenuClose);
+  
   const chatsState = useSelector((state) => state.chats);
   const userChats = chatsState.userChats;
 
@@ -63,14 +67,13 @@ function Messages() {
             </div>
           </div>
         </div>
-        {/*  <SearchField placeholderText="Search Direct Messages" /> */}
       </div>
       {userChats &&
-        userChats?.map((chat) => (
+        userChats.map((chat) => (
           <MessageItem key={chat.updatedAt} chat={chat} />
         ))}
 
-      {userChats.length === 0 && (
+      {!userChats && (
         <div className={styles.box}>
           <InfoBlock
             title="Welcome to your inbox!"

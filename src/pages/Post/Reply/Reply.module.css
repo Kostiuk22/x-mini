@@ -30,18 +30,25 @@
 
 .right {
   position: relative;
-    display: flex;
-    height: 20px;
-    top: -8px;
+  display: flex;
+  height: 20px;
+  top: -8px;
 }
 
 .text {
-    margin-bottom: 12px;
-    white-space: pre-wrap;
+  margin-bottom: 12px;
+  white-space: pre-wrap;
 }
 
 .text p {
-    font-size: 15px;
-    font-weight: 400;
-    color: rgb(231, 233, 234);
+  font-size: 15px;
+  font-weight: 400;
+  color: rgb(231, 233, 234);
+}
+
+.replyMedia {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
 }

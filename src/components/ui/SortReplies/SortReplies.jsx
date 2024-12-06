@@ -1,7 +1,7 @@
+import styles from './SortReplies.module.css';
 import { useState, useRef, useEffect } from 'react';
 import { FaSortAmountDownAlt, FaCheck } from 'react-icons/fa';
 import { IoIosArrowDown } from 'react-icons/io';
-import styles from './SortReplies.module.css';
 
 function SortReplies() {
   const [isModalOpen, setIsModalOpen] = useState(false);

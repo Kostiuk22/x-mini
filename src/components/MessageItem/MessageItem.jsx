@@ -1,24 +1,27 @@
-import { NavLink, useNavigate } from 'react-router-dom';
-import Avatar from '../ui/Avatar/Avatar';
 import styles from './MessageItem.module.css';
+
 import { useEffect, useState } from 'react';
-import MoreBtn from '../ui/MoreBtn/MoreBtn';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
 import ActionMenu from '../ActionMenu/ActionMenu';
+import Avatar from '../ui/Avatar/Avatar';
+import MoreBtn from '../ui/MoreBtn/MoreBtn';
 import useMenu from '../../hooks/useMenu';
+import { useUserProfile } from '../../hooks/useUserProfile';
 import { messagesMenuActions } from '../../utils/menuActions';
+import { transformDate } from '../../utils/transformDate';
 import { UserRequests } from '../../services/UserRequests';
 import { MessagesRequests } from '../../services/MessagesRequests';
-import { transformDate } from '../../utils/transformDate';
-import { useDispatch } from 'react-redux';
 import { setChatId, setReceiver } from '../../store/messages/slices';
-import { useUserProfile } from '../../hooks/useUserProfile';
 
 function MessageItem({ chat }) {
   const { chatId, lastMessage, receiverId, updatedAt, isSeen } = chat;
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
   const [receiverData, setReceiverData] = useState({});
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  
   const userId = useUserProfile().uid;
   const { isMenuOpen, handleMenuOpen, handleMenuClose } = useMenu();
   const transformedDate = transformDate(updatedAt);

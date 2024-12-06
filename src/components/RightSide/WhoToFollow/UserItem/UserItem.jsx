@@ -1,14 +1,18 @@
+import styles from './UserItem.module.css';
+
 import FollowBtn from '../../../ui/FollowBtn/FollowBtn';
 import Avatar from '../../../ui/Avatar/Avatar';
 import NickName from '../../../ui/NickName/NickName';
-import styles from './UserItem.module.css';
+
 import { useUserProfile } from '../../../../hooks/useUserProfile';
 import { useNavigate } from 'react-router-dom';
 
 function UserItem({ user }) {
+  const { tag, name, uid, photoURL } = user;
+
   const navigate = useNavigate();
   const currentUserId = useUserProfile().uid;
-  const { tag, name, uid, photoURL } = user;
+  
   return (
     <div className={styles.userItem} onClick={() => navigate(`/x.com/${tag}`)}>
       <Avatar photoURL={photoURL} />
@@ -18,7 +22,11 @@ function UserItem({ user }) {
           <h5>@{tag}</h5>
         </div>
 
-        <FollowBtn currentUserId={currentUserId} targetUserId={uid} />
+        {user.uid !== currentUserId ? (
+          <FollowBtn currentUserId={currentUserId} targetUserId={uid} />
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );

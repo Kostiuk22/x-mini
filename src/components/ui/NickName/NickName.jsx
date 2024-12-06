@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom';
 import styles from './NickName.module.css';
+import { useNavigate } from 'react-router-dom';
 
 function NickName({ userName, tag }) {
   const navigate = useNavigate();

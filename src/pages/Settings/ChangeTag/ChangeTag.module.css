@@ -3,9 +3,24 @@
 }
 .header {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  gap: 12px;
   margin-bottom: 12px;
+}
+.exitBtn {
+  width: 34px;
+  height: 34px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.exitBtn:hover {
+  background-color: rgb(29, 28, 28);
 }
 
 .header h5 {
@@ -22,4 +37,9 @@
   color: white;
   width: 100%;
   font-size: 19px;
+}
+
+@media screen {
+  
+  
 }

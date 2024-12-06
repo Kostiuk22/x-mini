@@ -1,8 +1,7 @@
 import styles from './ReplyTabList.module.css';
+
 import { IoChatboxOutline } from 'react-icons/io5';
-//import { BiRepost } from 'react-icons/bi';
-import { FaRegHeart, FaBookmark, FaHeart } from 'react-icons/fa';
-import { RiShare2Line } from 'react-icons/ri';
+import { FaRegHeart, FaBookmark, FaHeart, FaRegCopy } from 'react-icons/fa';
 import { IoIosStats } from 'react-icons/io';
 import { useUserProfile } from '../../../hooks/useUserProfile';
 import {
@@ -13,18 +12,18 @@ import {
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { toggleBookmarks } from '../../../store/user/thunks';
+import { copyUrlToClipboard } from '../../../utils/copyUrlToClipboard';
 
 function ReplyTabList({ postStats }) {
+  const { countsReply, postId, likesLength, numberOfViews, authorTag } = postStats;
   const dispatch = useDispatch();
-  const { countsReply, postId, likesLength, numberOfViews } = postStats;
-  const { tag: userTag, bookmarks } = useUserProfile();
+  
+  const { tag: userTag, bookmarks, uid } = useUserProfile();
   const [toggleLike] = useToggleLikeMutation();
-  const { data: isLiked } = useGetLikeStatusQuery({ postId, userTag });
-  //const { data: numberOfViews } = useGetNumberViewsQuery(postId);
+  const { data: isLiked } = useGetLikeStatusQuery({ postId, uid });
   const [incrementCountViews] = useIncrementCountViewsMutation();
+  
   const isBookmarked = bookmarks?.includes(postId);
-
-
 
   useEffect(() => {
     incrementCountViews(postId);
@@ -34,7 +33,7 @@ function ReplyTabList({ postStats }) {
     e.preventDefault();
     e.stopPropagation();
 
-    toggleLike({ postId, userTag });
+    toggleLike({ postId, uid });
   };
 
   const handleToggleBookmark = (e) => {
@@ -83,9 +82,9 @@ function ReplyTabList({ postStats }) {
             <FaBookmark className={styles.icon} />
           </div>
         </div>
-        <div className={styles.stat}>
+        <div className={styles.stat} onClick={(e)=> copyUrlToClipboard(e, authorTag, postId)}>
           <div className={styles.iconWrapper}>
-            <RiShare2Line className={styles.icon} />
+            <FaRegCopy className={styles.icon} />
           </div>
         </div>
       </div>

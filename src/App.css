@@ -100,3 +100,9 @@ textarea {
   background-color: #ff4d4f; 
   color: white;
 }
+
+@media (max-width: 702px) {
+  .container{
+    width: 100%;
+  }
+}

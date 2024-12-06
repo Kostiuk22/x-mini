@@ -1,17 +1,19 @@
+import styles from './FollowBtn.module.css';
+
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { followUser, unfollowUser } from '../../../store/user/thunks';
-import styles from './FollowBtn.module.css';
 
 function FollowBtn({ currentUserId, targetUserId }) {
+  const [isProcessing, setIsProcessing] = useState(false);
   const dispatch = useDispatch();
+
   const following =
     useSelector((state) => state.user.userProfile.following) || [];
   const isFollowing = following.includes(targetUserId);
   const [statusText, setStatusText] = useState(
     isFollowing ? 'Following' : 'Follow'
   );
-  const [isProcessing, setIsProcessing] = useState(false);
 
   useEffect(() => {
     setStatusText(isFollowing ? 'Following' : 'Follow');

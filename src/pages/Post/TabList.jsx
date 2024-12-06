@@ -1,8 +1,10 @@
 import styles from './TabList.module.css';
+
 import { RiGalleryLine } from 'react-icons/ri';
 import { HiOutlineGif } from 'react-icons/hi2';
 import { BsEmojiSmile } from 'react-icons/bs';
 import { useRef, useState } from 'react';
+
 import EmojiPicker from 'emoji-picker-react';
 import useClickOutside from '../../hooks/useClickOutside';
 

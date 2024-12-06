@@ -1,5 +1,6 @@
-import { NavLink } from 'react-router-dom';
 import styles from './NavBar.module.css';
+
+import { NavLink } from 'react-router-dom';
 
 function NavBar({ isAuthedUser, tag }) {
   return (
