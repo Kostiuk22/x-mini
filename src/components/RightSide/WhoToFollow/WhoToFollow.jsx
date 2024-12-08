@@ -1,11 +1,11 @@
 import styles from './WhoToFollow.module.css';
 
-import ShowMoreBtn from '../../ui/ShowMoreBtn/ShowMoreBtn';
+import ShowMoreBtn from '@components/ui/ShowMoreBtn/ShowMoreBtn';
 import UserItem from './UserItem/UserItem';
 
 import { useEffect, useState } from 'react';
-import { UserRequests } from '../../../services/UserRequests';
-import { useUserProfile } from '../../../hooks/useUserProfile';
+import { UserRequests } from '@services/UserRequests';
+import { useUserProfile } from '@hooks/useUserProfile';
 
 function WhoToFollow() {
   const [offerUsers, setOfferUsers] = useState([]);

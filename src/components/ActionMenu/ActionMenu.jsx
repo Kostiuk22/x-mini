@@ -4,8 +4,8 @@ import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
 import ActionMenuItem from '../ActionMenuItem/ActionMenuItem';
-import useClickOutside from '../../hooks/useClickOutside';
-import useMenuPosition from '../../hooks/useMenuPosition';
+import useClickOutside from '@hooks/useClickOutside';
+import useMenuPosition from '@hooks/useMenuPosition';
 
 function ActionMenu({
   onClose,

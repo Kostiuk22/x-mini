@@ -1,16 +1,16 @@
 import styles from './Bookmarks.module.css';
 
-import InfoBlock from '../../components/ui/InfoBlock/InfoBlock';
-import MoreBtn from '../../components/ui/MoreBtn/MoreBtn';
-import ActionMenu from '../../components/ActionMenu/ActionMenu';
-import useMenu from '../../hooks/useMenu';
-import PostPreview from '../../components/PostPreview/PostPreview';
+import InfoBlock from '@components/ui/InfoBlock/InfoBlock';
+import MoreBtn from '@components/ui/MoreBtn/MoreBtn';
+import ActionMenu from '@components/ActionMenu/ActionMenu';
+import useMenu from '@hooks/useMenu';
+import PostPreview from '@components/PostPreview/PostPreview';
 
-import { bookmarksMenuActions } from '../../utils/menuActions';
+import { bookmarksMenuActions } from '@utils/menuActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { ProfileRequests } from '../../services/ProfileRequests';
-import { useUserProfile } from '../../hooks/useUserProfile';
+import { ProfileRequests } from '@services/ProfileRequests';
+import { useUserProfile } from '@hooks/useUserProfile';
 
 function Bookmarks() {
   const [bookmarks, setBookmarks] = useState([]);

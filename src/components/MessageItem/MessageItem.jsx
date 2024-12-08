@@ -7,13 +7,13 @@ import { useDispatch } from 'react-redux';
 import ActionMenu from '../ActionMenu/ActionMenu';
 import Avatar from '../ui/Avatar/Avatar';
 import MoreBtn from '../ui/MoreBtn/MoreBtn';
-import useMenu from '../../hooks/useMenu';
-import { useUserProfile } from '../../hooks/useUserProfile';
-import { messagesMenuActions } from '../../utils/menuActions';
-import { transformDate } from '../../utils/transformDate';
-import { UserRequests } from '../../services/UserRequests';
-import { MessagesRequests } from '../../services/MessagesRequests';
-import { setChatId, setReceiver } from '../../store/messages/slices';
+import useMenu from '@hooks/useMenu';
+import { useUserProfile } from '@hooks/useUserProfile';
+import { messagesMenuActions } from '@utils/menuActions';
+import { transformDate } from '@utils/transformDate';
+import { UserRequests } from '@services/UserRequests';
+import { MessagesRequests } from '@services/MessagesRequests';
+import { setChatId, setReceiver } from '@store/messages/slices';
 
 function MessageItem({ chat }) {
   const { chatId, lastMessage, receiverId, updatedAt, isSeen } = chat;

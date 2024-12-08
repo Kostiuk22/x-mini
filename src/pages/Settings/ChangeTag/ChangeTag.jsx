@@ -1,15 +1,15 @@
 import styles from './ChangeTag.module.css';
 
-import InputBox from '../../../components/ui/Input/InputBox/InputBox';
-import BlueBtn from '../../../components/ui/BlueBtn/BlueBtn';
+import InputBox from '@components/ui/Input/InputBox/InputBox';
+import BlueBtn from '@components/ui/BlueBtn/BlueBtn';
 
 import { useEffect, useRef, useState } from 'react';
-import { useUserProfile } from '../../../hooks/useUserProfile';
-import { UserRequests } from '../../../services/UserRequests';
+import { useUserProfile } from '@hooks/useUserProfile';
+import { UserRequests } from '@services/UserRequests';
 import { useDispatch } from 'react-redux';
 import { IoArrowBack } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
-import { useWindowWidth } from '../../../hooks/useWindowWidth';
+import { useWindowWidth } from '@hooks/useWindowWidth';
 
 function ChangeTag() {
   const { tag, uid } = useUserProfile();

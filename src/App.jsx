@@ -10,33 +10,32 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 
-import Replies from './pages/Profile/Replies/Replies';
-import RepostedPosts from './pages/Profile/RepostedPosts/RepostedPosts';
-import MessageSection from './components/MessageSection/MessageSection';
-import Media from './pages/Profile/Media/Media';
-import Likes from './pages/Profile/Likes/Likes';
-import Home from './pages/Home/Home';
-import Explore from './pages/Explore/Explore';
-import Post from './pages/Post/Post';
-import Auth from './pages/Auth/Auth';
-import DefaultMessages from './pages/Messages/DefaultMessages/DefaultMessages';
-import ChangeTag from './pages/Settings/ChangeTag/ChangeTag';
-import ChangePassword from './pages/Settings/ChangePassword/ChangePassword';
-import Following from './pages/Profile/StatsWrapper/Following/Following';
-import SettingsLayout from './layouts/SettingsLayout';
-import store from './store';
-import RootLayout from './layouts/RootLayout';
-import LoadingSpinner from './components/ui/LoadingSpinner/LoadingSpinner';
-import Followers from './pages/Profile/StatsWrapper/Followers/Followers';
+import Replies from '@pages/Profile/Replies/Replies';
+import RepostedPosts from '@pages/Profile/RepostedPosts/RepostedPosts';
+import MessageSection from '@components/MessageSection/MessageSection';
+import Media from '@pages/Profile/Media/Media';
+import Likes from '@pages/Profile/Likes/Likes';
+import Home from '@pages/Home/Home';
+import Explore from '@pages/Explore/Explore';
+import Post from '@pages/Post/Post';
+import Auth from '@pages/Auth/Auth';
+import DefaultMessages from '@pages/Messages/DefaultMessages/DefaultMessages';
+import ChangeTag from '@pages/Settings/ChangeTag/ChangeTag';
+import ChangePassword from '@pages/Settings/ChangePassword/ChangePassword';
+import Following from '@pages/Profile/StatsWrapper/Following/Following';
+import SettingsLayout from '@layouts/SettingsLayout';
+import store from '@store';
+import RootLayout from '@layouts/RootLayout';
+import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
+import Followers from '@pages/Profile/StatsWrapper/Followers/Followers';
 
-const Bookmarks = lazy(() => import('./pages/Bookmarks/Bookmarks'));
-const Profile = lazy(() => import('./pages/Profile/Profile'));
+const Bookmarks = lazy(() => import('@pages/Bookmarks/Bookmarks'));
+const Profile = lazy(() => import('@pages/Profile/Profile'));
 const StatsWrapper = lazy(() =>
-  import('./pages/Profile/StatsWrapper/StatsWrapper')
+  import('@pages/Profile/StatsWrapper/StatsWrapper')
 );
-const MainLayout = lazy(() => import('./layouts/MainLayout'));
-const MessagesLayout = lazy(() => import('./layouts/MessagesLayout'));
-
+const MainLayout = lazy(() => import('@layouts/MainLayout'));
+const MessagesLayout = lazy(() => import('@layouts/MessagesLayout'));
 
 const routes = createBrowserRouter(
   createRoutesFromElements(

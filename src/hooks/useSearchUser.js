@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { searchUser } from '../utils/searchUsers';
+import { searchUser } from '@utils/searchUsers';
 
 export const useSearchUser = (searchText) => {
   const [result, setResult] = useState([]);

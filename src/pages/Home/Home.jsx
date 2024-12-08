@@ -1,13 +1,13 @@
 import styles from './Home.module.css';
 
-import PostCreatedField from '../../components/PostCreatedField/PostCreatedField';
-import LoadingSpinner from '../../components/ui/LoadingSpinner/LoadingSpinner';
-import PostsList from '../../components/PostsList/PostsList';
-import ShowMoreBtn from '../../components/ui/ShowMoreBtn/ShowMoreBtn';
+import PostCreatedField from '@components/PostCreatedField/PostCreatedField';
+import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
+import PostsList from '@components/PostsList/PostsList';
+import ShowMoreBtn from '@components/ui/ShowMoreBtn/ShowMoreBtn';
 
 import { useState } from 'react';
-import { useGetFeedQuery, useGetPostsQuery } from '../../store/postsApi';
-import { useUserProfile } from '../../hooks/useUserProfile';
+import { useGetFeedQuery, useGetPostsQuery } from '@store/postsApi';
+import { useUserProfile } from '@hooks/useUserProfile';
 
 function Home() {
   const [activeSection, setActiveSection] = useState('forYou');

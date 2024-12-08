@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { followUser, unfollowUser } from '../store/user/thunks';
+import { followUser, unfollowUser } from '@store/user/thunks';
 
 export const useFollow = (currentUserId, targetUserId) => {
   const dispatch = useDispatch();

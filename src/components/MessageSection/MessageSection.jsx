@@ -8,15 +8,15 @@ import { Link, useParams } from 'react-router-dom';
 import Msg from './Msg/Msg';
 import NickName from '../ui/NickName/NickName';
 import { IoArrowBack } from 'react-icons/io5';
-import defaultImg from '../../assets/defaultUser.png';
+import defaultImg from '@assets/defaultUser.png';
 import { BsEmojiSmile } from 'react-icons/bs';
 import { TbSend2 } from 'react-icons/tb';
 import EmojiPicker from 'emoji-picker-react';
-import { transformDate } from '../../utils/transformDate';
-import { MessagesRequests } from '../../services/MessagesRequests';
-import useClickOutside from '../../hooks/useClickOutside';
-import { useUserProfile } from '../../hooks/useUserProfile';
-import { useWindowWidth } from '../../hooks/useWindowWidth';
+import { transformDate } from '@utils/transformDate';
+import { MessagesRequests } from '@services/MessagesRequests';
+import useClickOutside from '@hooks/useClickOutside';
+import { useUserProfile } from '@hooks/useUserProfile';
+import { useWindowWidth } from '@hooks/useWindowWidth';
 
 function MessageSection() {
   const [inputText, setInputText] = useState('');

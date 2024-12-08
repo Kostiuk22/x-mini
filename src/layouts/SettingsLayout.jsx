@@ -1,9 +1,9 @@
 import styles from './SettingsLayout.module.css';
 
-import Settings from '../pages/Settings/Settings';
+import Settings from '@pages/Settings/Settings';
 
 import { Outlet, useLocation } from 'react-router-dom';
-import { useWindowWidth } from '../hooks/useWindowWidth';
+import { useWindowWidth } from '@hooks/useWindowWidth';
 
 function SettingsLayout() {
   const [currentWidth] = useWindowWidth();

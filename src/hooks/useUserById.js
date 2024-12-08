@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { UserRequests } from '../services/UserRequests';
+import { UserRequests } from '@services/UserRequests';
 
 export const useUserById = (userId) => {
   const [user, setUser] = useState(null);

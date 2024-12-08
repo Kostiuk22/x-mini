@@ -6,10 +6,10 @@ import { IoMdClose } from 'react-icons/io';
 import { MdOutlineAddAPhoto } from 'react-icons/md';
 import { useForm } from 'react-hook-form';
 
-import { updateProfile } from '../../store/user/thunks';
-import { useUserProfile } from '../../hooks/useUserProfile';
-import useFilePicker from '../../hooks/useFilePicker';
-import defaultImg from '../../assets/defaultUser.png';
+import { updateProfile } from '@store/user/thunks';
+import { useUserProfile } from '@hooks/useUserProfile';
+import useFilePicker from '@hooks/useFilePicker';
+import defaultImg from '@assets/defaultUser.png';
 import Input from '../ui/Input/Input';
 import InputBox from '../ui/Input/InputBox/InputBox';
 

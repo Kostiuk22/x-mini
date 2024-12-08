@@ -13,11 +13,11 @@ import { PiPencilLine } from 'react-icons/pi';
 import { MdOutlineSettings } from 'react-icons/md';
 
 import NavItem from '../NavItem/NavItem';
-import PostCreatedModal from '../../../PostCreatedModal/PostCreatedModal';
-import BlueBtn from '../../../ui/BlueBtn/BlueBtn';
-import useMenu from '../../../../hooks/useMenu';
-import { useWindowWidth } from '../../../../hooks/useWindowWidth';
-import useClickOutside from '../../../../hooks/useClickOutside';
+import PostCreatedModal from '@components/PostCreatedModal/PostCreatedModal';
+import BlueBtn from '@components/ui/BlueBtn/BlueBtn';
+import useMenu from '@hooks/useMenu';
+import { useWindowWidth } from '@hooks/useWindowWidth';
+import useClickOutside from '@hooks/useClickOutside';
 
 function NavList() {
   const modalRef = useRef(null);

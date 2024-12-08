@@ -2,8 +2,8 @@ import styles from './NavItem.module.css';
 
 import { NavLink } from 'react-router-dom';
 
-import { useUserProfile } from '../../../../hooks/useUserProfile';
-import { useWindowWidth } from '../../../../hooks/useWindowWidth';
+import { useUserProfile } from '@hooks/useUserProfile';
+import { useWindowWidth } from '@hooks/useWindowWidth';
 
 function NavItem({ name, children }) {
   const [currentWidth] = useWindowWidth();

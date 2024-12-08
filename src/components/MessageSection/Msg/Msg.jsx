@@ -1,7 +1,7 @@
 import styles from './Msg.module.css';
 
-import { useUserProfile } from '../../../hooks/useUserProfile';
-import { transformDateForPostInfo } from '../../../utils/transformDateForPostInfo';
+import { useUserProfile } from '@hooks/useUserProfile';
+import { transformDateForPostInfo } from '@utils/transformDateForPostInfo';
 
 function Msg({ message }) {
   const { text, senderId, createdAt } = message;

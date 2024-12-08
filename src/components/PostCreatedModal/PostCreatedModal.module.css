@@ -16,7 +16,6 @@
   margin: 0 auto;
   border-radius: 16px;
   background-color: black;
-  
 }
 
 .modalBox header {
@@ -42,4 +41,15 @@
 .icon {
   font-size: 16px;
   font-weight: 700;
+}
+
+@media (max-width: 1002px) {
+  .modalBox {
+    width: 510px;
+  }
+}
+@media (max-width: 650px) {
+  .modalBox {
+    width: 410px;
+  }
 }

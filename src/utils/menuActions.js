@@ -2,8 +2,8 @@ import { FaRegUser } from 'react-icons/fa';
 import { MdOutlineBlock } from 'react-icons/md';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { LuPin } from 'react-icons/lu';
-import { deleteAllBookmarks, logout } from '../store/user/thunks';
-import { resetChats } from '../store/messages/slices';
+import { deleteAllBookmarks, logout } from '@store/user/thunks';
+import { resetChats } from '@store/messages/slices';
 
 export const postMenuActions = (isFollowing, toggleFollow, handleMenuClose) => [
   {
@@ -11,10 +11,18 @@ export const postMenuActions = (isFollowing, toggleFollow, handleMenuClose) => [
     icon: FaRegUser,
     action: () => {
       toggleFollow();
-      handleMenuClose && handleMenuClose();
+      handleMenuClose();
     },
   },
-  { name: 'Block', icon: MdOutlineBlock, color: 'red' },
+  {
+    name: 'Block',
+    icon: MdOutlineBlock,
+    color: 'red',
+    action: () => {
+      handleMenuClose();
+      console.log('Coming soon!');
+    },
+  },
 ];
 
 export const getCurrentUserMenuActions = (
@@ -35,11 +43,6 @@ export const getCurrentUserMenuActions = (
   },
 ];
 
-export const replyMenuActions = () => [
-  { name: 'Follow', icon: FaRegUser },
-  { name: 'Block', icon: MdOutlineBlock },
-];
-
 export const messagesMenuActions = (handleDeleteChat) => [
   { name: 'Pin conversation', icon: LuPin },
   {
@@ -50,17 +53,6 @@ export const messagesMenuActions = (handleDeleteChat) => [
   },
 ];
 
-export const profileBtnMenuActions = [
-  {
-    name: 'Log out!',
-    color: 'red',
-    action: (dispatch) => {
-      dispatch(logout());
-      dispatch(resetChats());
-    },
-  },
-];
-
 export const bookmarksMenuActions = (dispatch, userId, handleMenuClose) => [
   {
     name: 'Clear all Bookmarks',
@@ -68,6 +60,17 @@ export const bookmarksMenuActions = (dispatch, userId, handleMenuClose) => [
     action: () => {
       dispatch(deleteAllBookmarks(userId));
       handleMenuClose();
+    },
+  },
+];
+
+export const profileBtnMenuActions = [
+  {
+    name: 'Log out!',
+    color: 'red',
+    action: (dispatch) => {
+      dispatch(logout());
+      dispatch(resetChats());
     },
   },
 ];

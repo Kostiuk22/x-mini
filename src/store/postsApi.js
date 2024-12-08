@@ -164,9 +164,9 @@ export const postsApi = createApi({
     }),
 
     getLikedPostsByUser: builder.query({
-      async queryFn(userTag) {
+      async queryFn(userId) {
         try {
-          const likedPosts = await ProfileRequests.getLikedPostsByUser(userTag);
+          const likedPosts = await ProfileRequests.getLikedPostsByUser(userId);
           return { data: likedPosts };
         } catch (error) {
           return { error };

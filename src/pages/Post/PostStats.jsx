@@ -3,14 +3,14 @@ import styles from './PostStats.module.css';
 //import { BiRepost } from 'react-icons/bi';
 import { IoChatboxOutline } from 'react-icons/io5';
 import { FaBookmark, FaHeart, FaRegCopy, FaRegHeart } from 'react-icons/fa';
-import { useUserProfile } from '../../hooks/useUserProfile';
+import { useUserProfile } from '@hooks/useUserProfile';
 import {
   useGetLikeStatusQuery,
   useToggleLikeMutation,
-} from '../../store/postsApi';
+} from '@store/postsApi';
 import { useDispatch } from 'react-redux';
-import { toggleBookmarks } from '../../store/user/thunks';
-import { copyUrlToClipboard } from '../../utils/copyUrlToClipboard';
+import { toggleBookmarks } from '@store/user/thunks';
+import { copyUrlToClipboard } from '@utils/copyUrlToClipboard';
 
 function PostStats({ postStats }) {
   const { countsReply, likesLength, postId, authorTag } = postStats;

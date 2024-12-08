@@ -1,26 +1,26 @@
 import styles from './Reply.module.css';
 
-import ActionMenu from '../../../components/ActionMenu/ActionMenu';
-import Avatar from '../../../components/ui/Avatar/Avatar';
-import MoreBtn from '../../../components/ui/MoreBtn/MoreBtn';
-import NickName from '../../../components/ui/NickName/NickName';
-import ReplyTabList from '../../../components/ui/ReplyTabList/ReplyTabList';
-import LoadingSpinner from '../../../components/ui/LoadingSpinner/LoadingSpinner';
-import useMenu from '../../../hooks/useMenu';
+import ActionMenu from '@components/ActionMenu/ActionMenu';
+import Avatar from '@components/ui/Avatar/Avatar';
+import MoreBtn from '@components/ui/MoreBtn/MoreBtn';
+import NickName from '@components/ui/NickName/NickName';
+import ReplyTabList from '@components/ui/ReplyTabList/ReplyTabList';
+import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
+import useMenu from '@hooks/useMenu';
 
 import {
   useDeletePostMutation,
   useGetPostQuery,
-} from '../../../store/postsApi';
+} from '@store/postsApi';
 import { Link, useNavigate } from 'react-router-dom';
-import { formatPostDate } from '../../../utils/formatPostDate';
-import { useUserById } from '../../../hooks/useUserById';
+import { formatPostDate } from '@utils/formatPostDate';
+import { useUserById } from '@hooks/useUserById';
 import {
   getCurrentUserMenuActions,
   postMenuActions,
-} from '../../../utils/menuActions';
-import { useUserProfile } from '../../../hooks/useUserProfile';
-import { useFollow } from '../../../hooks/useFollow';
+} from '@utils/menuActions';
+import { useUserProfile } from '@hooks/useUserProfile';
+import { useFollow } from '@hooks/useFollow';
 
 function Reply({ replyId }) {
   const { isMenuOpen, handleMenuClose, handleMenuOpen } = useMenu();
@@ -72,7 +72,7 @@ function Reply({ replyId }) {
                 items={
                   isPostOfCurrentUser
                     ? currentUserMenuActions
-                    : postMenuActions(isFollowing, toggleFollow)
+                    : postMenuActions(isFollowing, toggleFollow, handleMenuClose)
                 }
               />
             )}

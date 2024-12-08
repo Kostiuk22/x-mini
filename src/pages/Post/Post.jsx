@@ -1,27 +1,27 @@
 import styles from './Post.module.css';
 
-import HeaderTitle from '../../components/ui/HeaderTitle/HeaderTitle';
-import NickName from '../../components/ui/NickName/NickName';
+import HeaderTitle from '@components/ui/HeaderTitle/HeaderTitle';
+import NickName from '@components/ui/NickName/NickName';
 import PostInfo from './PostInfo';
 import PostStats from './PostStats';
-import SortReplies from '../../components/ui/SortReplies/SortReplies';
-import Avatar from '../../components/ui/Avatar/Avatar';
+import SortReplies from '@components/ui/SortReplies/SortReplies';
+import Avatar from '@components/ui/Avatar/Avatar';
 import PostReply from './PostReply/PostReply';
 import Reply from './Reply/Reply';
-import MoreBtn from '../../components/ui/MoreBtn/MoreBtn';
-import IsReposted from '../../components/ui/IsReposted/IsReposted';
-import useMenu from '../../hooks/useMenu';
-import ActionMenu from '../../components/ActionMenu/ActionMenu';
-import LoadingSpinner from '../../components/ui/LoadingSpinner/LoadingSpinner';
+import MoreBtn from '@components/ui/MoreBtn/MoreBtn';
+import IsReposted from '@components/ui/IsReposted/IsReposted';
+import useMenu from '@hooks/useMenu';
+import ActionMenu from '@components/ActionMenu/ActionMenu';
+import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
 import {
   getCurrentUserMenuActions,
   postMenuActions,
-} from '../../utils/menuActions';
-import { useDeletePostMutation, useGetPostQuery } from '../../store/postsApi';
+} from '@utils/menuActions';
+import { useDeletePostMutation, useGetPostQuery } from '@store/postsApi';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useUserById } from '../../hooks/useUserById';
-import { useUserProfile } from '../../hooks/useUserProfile';
-import { useFollow } from '../../hooks/useFollow';
+import { useUserById } from '@hooks/useUserById';
+import { useUserProfile } from '@hooks/useUserProfile';
+import { useFollow } from '@hooks/useFollow';
 
 function Post({ media, isReposted = false }) {
   const { isMenuOpen, handleMenuOpen, handleMenuClose } = useMenu();

@@ -1,10 +1,10 @@
 import styles from './UserItem.module.css';
 
-import FollowBtn from '../../../ui/FollowBtn/FollowBtn';
-import Avatar from '../../../ui/Avatar/Avatar';
-import NickName from '../../../ui/NickName/NickName';
+import FollowBtn from '@components/ui/FollowBtn/FollowBtn';
+import Avatar from '@components/ui/Avatar/Avatar';
+import NickName from '@components/ui/NickName/NickName';
 
-import { useUserProfile } from '../../../../hooks/useUserProfile';
+import { useUserProfile } from '@hooks/useUserProfile';
 import { useNavigate } from 'react-router-dom';
 
 function UserItem({ user }) {

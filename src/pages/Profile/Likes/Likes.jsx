@@ -1,17 +1,17 @@
-import LoadingSpinner from '../../../components/ui/LoadingSpinner/LoadingSpinner';
-import PostPreview from '../../../components/PostPreview/PostPreview';
-import InfoBlock from '../../../components/ui/InfoBlock/InfoBlock';
+import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
+import PostPreview from '@components/PostPreview/PostPreview';
+import InfoBlock from '@components/ui/InfoBlock/InfoBlock';
 
-import { useGetLikedPostsByUserQuery } from '../../../store/postsApi';
-import { useParams } from 'react-router-dom';
+import { useGetLikedPostsByUserQuery } from '@store/postsApi';
+import { useUserProfile } from '@hooks/useUserProfile';
 
 function Likes() {
-  const userTag = useParams().tag;
+  const userId = useUserProfile().uid
   const {
     data: likedPosts,
     isLoading,
     error,
-  } = useGetLikedPostsByUserQuery(userTag);
+  } = useGetLikedPostsByUserQuery(userId);
 
   
   if (isLoading) return <LoadingSpinner />;

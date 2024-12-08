@@ -1,17 +1,17 @@
 import styles from './PostReply.module.css';
 
-import Avatar from '../../../components/ui/Avatar/Avatar';
-import BlueBtn from '../../../components/ui/BlueBtn/BlueBtn';
+import Avatar from '@components/ui/Avatar/Avatar';
+import BlueBtn from '@components/ui/BlueBtn/BlueBtn';
 import TabList from '../TabList';
-import useTextarea from '../../../hooks/useTextarea';
-import useFilePicker from '../../../hooks/useFilePicker';
-import FileCarousel from '../../../components/FileCarousel/FileCarousel';
-import FilePreview from '../../../components/FilePreview/FilePreview';
+import useTextarea from '@hooks/useTextarea';
+import useFilePicker from '@hooks/useFilePicker';
+import FileCarousel from '@utils/FileCarousel/FileCarousel';
+import FilePreview from '@components/FilePreview/FilePreview';
 
 import { useState } from 'react';
-import { useUserProfile } from '../../../hooks/useUserProfile';
-import { generateTag } from '../../../utils/generateTag';
-import { useAddReplyMutation } from '../../../store/postsApi';
+import { useUserProfile } from '@hooks/useUserProfile';
+import { generateTag } from '@utils/generateTag';
+import { useAddReplyMutation } from '@store/postsApi';
 
 function PostReply({ authorTag, parentPostId }) {
   const [isElapsed, setIsElapsed] = useState(false);

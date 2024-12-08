@@ -159,3 +159,22 @@
   -webkit-box-shadow: 0 0 0 30px black inset !important; /* або інший колір бекграунду */
   -webkit-text-fill-color: white !important; /* колір тексту всередині інпуту */
 }
+
+@media (max-width: 1002px) {
+  .modalBox {
+    width: 510px;
+  }
+}
+@media (max-width: 650px) {
+  .modalBox {
+    width: 410px;
+  }
+  .img img {
+    width: 90px;
+    height: 90px;
+  }
+  .img {
+    width: 90px;
+    height: 90px;
+  }
+}

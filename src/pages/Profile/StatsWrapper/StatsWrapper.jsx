@@ -1,11 +1,11 @@
 import styles from './StatsWrapper.module.css';
 
-import HeaderProfile from '../../../components/ProfileComponents/HeaderProfile/HeaderProfile';
-import LoadingSpinner from '../../../components/ui/LoadingSpinner/LoadingSpinner';
+import HeaderProfile from '@components/ProfileComponents/HeaderProfile/HeaderProfile';
+import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
 
 import { NavLink, Outlet, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { UserRequests } from '../../../services/UserRequests';
+import { UserRequests } from '@services/UserRequests';
 
 function StatsWrapper() {
   const [user, setUser] = useState({});

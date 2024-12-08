@@ -1,9 +1,9 @@
-import LoadingSpinner from '../../../components/ui/LoadingSpinner/LoadingSpinner';
-import PostPreview from '../../../components/PostPreview/PostPreview';
-import InfoBlock from '../../../components/ui/InfoBlock/InfoBlock';
+import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
+import PostPreview from '@components/PostPreview/PostPreview';
+import InfoBlock from '@components/ui/InfoBlock/InfoBlock';
 
 import { useParams } from 'react-router-dom';
-import { useGetPostsByUserTagQuery } from '../../../store/postsApi';
+import { useGetPostsByUserTagQuery } from '@store/postsApi';
 
 function Replies() {
   const userTag = useParams().tag;

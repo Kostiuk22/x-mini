@@ -1,9 +1,9 @@
 import styles from './MainLayout.module.css';
 
-import LeftSide from '../components/LeftSide/LeftSide';
-import Main from '../components/Main/Main';
-import RightSide from '../components/RightSide/RightSide';
-import LoadingSpinner from '../components/ui/LoadingSpinner/LoadingSpinner';
+import LeftSide from '@components/LeftSide/LeftSide';
+import Main from '@components/Main/Main';
+import RightSide from '@components/RightSide/RightSide';
+import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
 
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';

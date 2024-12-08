@@ -2,7 +2,7 @@ import styles from './FollowBtn.module.css';
 
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { followUser, unfollowUser } from '../../../store/user/thunks';
+import { followUser, unfollowUser } from '@store/user/thunks';
 
 function FollowBtn({ currentUserId, targetUserId }) {
   const [isProcessing, setIsProcessing] = useState(false);

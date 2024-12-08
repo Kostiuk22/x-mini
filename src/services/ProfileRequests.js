@@ -65,10 +65,10 @@ export const ProfileRequests = {
       return error;
     }
   },
-  getLikedPostsByUser: async (userTag) => {
+  getLikedPostsByUser: async (userId) => {
     try {
       const postsRef = collection(db, 'posts');
-      const postsQ = query(postsRef, where('likes', 'array-contains', userTag));
+      const postsQ = query(postsRef, where('likes', 'array-contains', userId));
       const qSnapshot = await getDocs(postsQ);
       const likedPosts = [];
       qSnapshot.forEach((doc) => {

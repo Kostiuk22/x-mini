@@ -3,16 +3,16 @@ import styles from './ReplyTabList.module.css';
 import { IoChatboxOutline } from 'react-icons/io5';
 import { FaRegHeart, FaBookmark, FaHeart, FaRegCopy } from 'react-icons/fa';
 import { IoIosStats } from 'react-icons/io';
-import { useUserProfile } from '../../../hooks/useUserProfile';
+import { useUserProfile } from '@hooks/useUserProfile';
 import {
   useGetLikeStatusQuery,
   useIncrementCountViewsMutation,
   useToggleLikeMutation,
-} from '../../../store/postsApi';
+} from '@store/postsApi';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { toggleBookmarks } from '../../../store/user/thunks';
-import { copyUrlToClipboard } from '../../../utils/copyUrlToClipboard';
+import { toggleBookmarks } from '@store/user/thunks';
+import { copyUrlToClipboard } from '@utils/copyUrlToClipboard';
 
 function ReplyTabList({ postStats }) {
   const { countsReply, postId, likesLength, numberOfViews, authorTag } = postStats;

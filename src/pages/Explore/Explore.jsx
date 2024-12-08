@@ -1,11 +1,11 @@
 import styles from './Explore.module.css';
 
 import { useState } from 'react';
-import { useSearchUser } from '../../hooks/useSearchUser';
+import { useSearchUser } from '@hooks/useSearchUser';
 
-import SearchField from '../../components/ui/SearchField/SearchField';
-import UserItem from '../../components/RightSide/WhoToFollow/UserItem/UserItem';
-import LoadingSpinner from '../../components/ui/LoadingSpinner/LoadingSpinner';
+import SearchField from '@components/ui/SearchField/SearchField';
+import UserItem from '@components/RightSide/WhoToFollow/UserItem/UserItem';
+import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
 
 function Explore() {
   const [searchText, setSearchText] = useState('');

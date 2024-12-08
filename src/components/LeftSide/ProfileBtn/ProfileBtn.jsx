@@ -1,11 +1,11 @@
 import styles from './ProfileBtn.module.css';
 
 import { FaEllipsisH } from 'react-icons/fa';
-import Avatar from '../../ui/Avatar/Avatar';
-import ActionMenu from '../../ActionMenu/ActionMenu';
-import useMenu from '../../../hooks/useMenu';
-import { profileBtnMenuActions } from '../../../utils/menuActions';
-import { useUserProfile } from '../../../hooks/useUserProfile';
+import Avatar from '@components/ui/Avatar/Avatar';
+import ActionMenu from '@components/ActionMenu/ActionMenu';
+import useMenu from '@hooks/useMenu';
+import { profileBtnMenuActions } from '@utils/menuActions';
+import { useUserProfile } from '@hooks/useUserProfile';
 
 function ProfileBtn() {
   const { isMenuOpen, handleMenuOpen, handleMenuClose } = useMenu();

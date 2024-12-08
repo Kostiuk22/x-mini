@@ -1,10 +1,10 @@
 import styles from './Following.module.css';
 
-import LoadingSpinner from '../../../../components/ui/LoadingSpinner/LoadingSpinner';
-import UserItem from '../../../../components/RightSide/WhoToFollow/UserItem/UserItem';
+import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
+import UserItem from '@components/RightSide/WhoToFollow/UserItem/UserItem';
 
 import { useEffect, useState } from 'react';
-import { UserRequests } from '../../../../services/UserRequests';
+import { UserRequests } from '@services/UserRequests';
 import { useParams } from 'react-router-dom';
 
 function Following() {

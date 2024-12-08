@@ -1,17 +1,17 @@
 import styles from './MessagesModal.module.css';
 
-import HeaderTitle from '../../../components/ui/HeaderTitle/HeaderTitle';
-import SearchField from '../../../components/ui/SearchField/SearchField';
-import LoadingSpinner from '../../../components/ui/LoadingSpinner/LoadingSpinner';
-import SearchedUser from '../../../components/SearchedUser/SearchedUser';
+import HeaderTitle from '@components/ui/HeaderTitle/HeaderTitle';
+import SearchField from '@components/ui/SearchField/SearchField';
+import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
+import SearchedUser from '@components/SearchedUser/SearchedUser';
 
 import { IoMdClose } from 'react-icons/io';
 import { useState } from 'react';
-import { useSearchUser } from '../../../hooks/useSearchUser';
-import { MessagesRequests } from '../../../services/MessagesRequests';
-import { useUserProfile } from '../../../hooks/useUserProfile';
+import { useSearchUser } from '@hooks/useSearchUser';
+import { MessagesRequests } from '@services/MessagesRequests';
+import { useUserProfile } from '@hooks/useUserProfile';
 import { useDispatch } from 'react-redux';
-import { setChatId } from '../../../store/messages/slices';
+import { setChatId } from '@store/messages/slices';
 
 function MessagesModal({ modalRef, handleMenuClose }) {
   const [searchText, setSearchText] = useState('');

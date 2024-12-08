@@ -4,20 +4,17 @@ import Avatar from '../ui/Avatar/Avatar';
 import MoreBtn from '../ui/MoreBtn/MoreBtn';
 import NickName from '../ui/NickName/NickName';
 import ReplyTabList from '../ui/ReplyTabList/ReplyTabList';
-import useMenu from '../../hooks/useMenu';
+import useMenu from '@hooks/useMenu';
 import ActionMenu from '../ActionMenu/ActionMenu';
 import LoadingSpinner from '../ui/LoadingSpinner/LoadingSpinner';
 
-import {
-  getCurrentUserMenuActions,
-  postMenuActions,
-} from '../../utils/menuActions';
-import { transformDate } from '../../utils/transformDate';
+import { getCurrentUserMenuActions, postMenuActions } from '@utils/menuActions';
+import { transformDate } from '@utils/transformDate';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDeletePostMutation } from '../../store/postsApi';
-import { useUserProfile } from '../../hooks/useUserProfile';
-import { useUserById } from '../../hooks/useUserById';
-import { useFollow } from '../../hooks/useFollow';
+import { useDeletePostMutation } from '@store/postsApi';
+import { useUserProfile } from '@hooks/useUserProfile';
+import { useUserById } from '@hooks/useUserById';
+import { useFollow } from '@hooks/useFollow';
 
 function PostPreview({ post }) {
   const { isMenuOpen, handleMenuOpen, handleMenuClose } = useMenu();
@@ -43,7 +40,12 @@ function PostPreview({ post }) {
   const [deletePost] = useDeletePostMutation();
   const { isFollowing, toggleFollow } = useFollow(uid, authorUid);
 
-  if (isLoadingAuthor || error || !author) return <LoadingSpinner />;
+  if (isLoadingAuthor || error || !author)
+    return (
+      <div className={styles.postPreview}>
+        <LoadingSpinner />
+      </div>
+    );
 
   const isPostOfCurrentUser = curUserTag === author?.tag;
   const createdPostAt = new Date(createdAt);

@@ -1,18 +1,18 @@
 import styles from './Profile.module.css';
 
 import NavBar from './Navbar/NavBar';
-import defaultUserImg from '../../assets/defaultUser.png';
-import HeaderProfile from '../../components/ProfileComponents/HeaderProfile/HeaderProfile';
-import StatsProfile from '../../components/ProfileComponents/StatsProfile/StatsProfile';
-import ProfileEditBlock from '../../components/ProfileComponents/ProfileEditBlock/ProfileEditBlock';
-import LoadingSpinner from '../../components/ui/LoadingSpinner/LoadingSpinner';
-import FollowBtn from '../../components/ui/FollowBtn/FollowBtn';
+import defaultUserImg from '@assets/defaultUser.png';
+import HeaderProfile from '@components/ProfileComponents/HeaderProfile/HeaderProfile';
+import StatsProfile from '@components/ProfileComponents/StatsProfile/StatsProfile';
+import ProfileEditBlock from '@components/ProfileComponents/ProfileEditBlock/ProfileEditBlock';
+import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
+import FollowBtn from '@components/ui/FollowBtn/FollowBtn';
 
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import { Outlet, useParams } from 'react-router-dom';
-import { useUserProfile } from '../../hooks/useUserProfile';
-import { transformDate } from '../../utils/transformDate';
-import { UserRequests } from '../../services/UserRequests';
+import { useUserProfile } from '@hooks/useUserProfile';
+import { transformDate } from '@utils/transformDate';
+import { UserRequests } from '@services/UserRequests';
 import { useEffect, useState } from 'react';
 import { FaLocationDot } from 'react-icons/fa6';
 

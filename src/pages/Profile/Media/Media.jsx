@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { ProfileRequests } from '../../../services/ProfileRequests';
-import LoadingSpinner from '../../../components/ui/LoadingSpinner/LoadingSpinner';
+import { ProfileRequests } from '@services/ProfileRequests';
+import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
 import { useParams } from 'react-router-dom';
-import InfoBlock from '../../../components/ui/InfoBlock/InfoBlock';
+import InfoBlock from '@components/ui/InfoBlock/InfoBlock';
 
 function Media() {
   const [media, setMedia] = useState([]);

@@ -1,9 +1,9 @@
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserRequests } from '../services/UserRequests';
+import { UserRequests } from '@services/UserRequests';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../store/user/slices';
+import { setUser } from '@store/user/slices';
 
 export const useAuth = () => {
   const auth = getAuth();

@@ -74,3 +74,15 @@
   padding-bottom: 12px;
   border-bottom: 1px solid var(--secondary-grey-color);
 }
+
+@media (max-width: 1002px) {
+  .modalBox {
+    width: 510px;
+  }
+}
+@media (max-width: 650px) {
+  .modalBox {
+    width: 410px;
+  }
+}
+

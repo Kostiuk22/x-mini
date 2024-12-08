@@ -1,9 +1,9 @@
 import styles from './MessagesLayout.module.css';
 
-import Messages from '../pages/Messages/Messages';
+import Messages from '@pages/Messages/Messages';
 
 import { Outlet, useLocation } from 'react-router-dom';
-import { useWindowWidth } from '../hooks/useWindowWidth';
+import { useWindowWidth } from '@hooks/useWindowWidth';
 
 function MessagesLayout() {
   const [currentWidth] = useWindowWidth();

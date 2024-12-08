@@ -21,8 +21,8 @@ import {
   updateDoc,
   where,
 } from 'firebase/firestore';
-import { generateTag } from '../utils/generateTag';
-import { setNewTag } from '../store/user/slices';
+import { generateTag } from '@utils/generateTag';
+import { setNewTag } from '@store/user/slices';
 import { toast } from 'react-toastify';
 
 export const UserRequests = {

@@ -1,6 +1,6 @@
 import styles from './PostInfo.module.css';
 
-import { transformDateForPostInfo } from '../../utils/transformDateForPostInfo';
+import { transformDateForPostInfo } from '@utils/transformDateForPostInfo';
 
 function PostInfo({ postInfo  }) {
   const { createdAt, numberOfViews } = postInfo;

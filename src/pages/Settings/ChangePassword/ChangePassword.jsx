@@ -1,12 +1,12 @@
 import styles from './ChangePassword.module.css';
 
-import BlueBtn from '../../../components/ui/BlueBtn/BlueBtn';
-import InputBox from '../../../components/ui/Input/InputBox/InputBox';
+import BlueBtn from '@components/ui/BlueBtn/BlueBtn';
+import InputBox from '@components/ui/Input/InputBox/InputBox';
 
 import { useForm } from 'react-hook-form';
-import { UserRequests } from '../../../services/UserRequests';
+import { UserRequests } from '@services/UserRequests';
 import { getAuth } from 'firebase/auth';
-import { useWindowWidth } from '../../../hooks/useWindowWidth';
+import { useWindowWidth } from '@hooks/useWindowWidth';
 import { Link } from 'react-router-dom';
 import { IoArrowBack } from 'react-icons/io5';
 

@@ -1,5 +1,5 @@
 import styles from './Avatar.module.css';
-import defaultUserImg from '../../../assets/defaultUser.png';
+import defaultUserImg from '@assets/defaultUser.png';
 import { memo } from 'react';
 
 const Avatar = memo(({ photoURL }) => {
