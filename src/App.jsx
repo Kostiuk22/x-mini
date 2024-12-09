@@ -28,6 +28,7 @@ import store from '@store';
 import RootLayout from '@layouts/RootLayout';
 import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
 import Followers from '@pages/Profile/StatsWrapper/Followers/Followers';
+import ErrorPage from '@pages/ErrorPage/ErrorPage';
 
 const Bookmarks = lazy(() => import('@pages/Bookmarks/Bookmarks'));
 const Profile = lazy(() => import('@pages/Profile/Profile'));
@@ -39,10 +40,9 @@ const MessagesLayout = lazy(() => import('@layouts/MessagesLayout'));
 
 const routes = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
+    <Route path="/" element={<RootLayout />} errorElement={<ErrorPage />}>
       <Route path="/auth" element={<Auth />} />
       <Route
-        path="/x.com"
         element={
           <Suspense fallback={<LoadingSpinner />}>
             <MainLayout />
@@ -50,7 +50,9 @@ const routes = createBrowserRouter(
         }
       >
         <Route path="home" element={<Home />} />
+
         <Route path="explore" element={<Explore />} />
+
         <Route
           path="i/bookmarks"
           element={
@@ -72,6 +74,11 @@ const routes = createBrowserRouter(
           <Route path=":chatId" element={<MessageSection />} />
         </Route>
 
+        <Route path="settings" element={<SettingsLayout />}>
+          <Route path="change_tag" element={<ChangeTag />} />
+          <Route path="change_password" element={<ChangePassword />} />
+        </Route>
+
         <Route
           path=":tag"
           element={
@@ -85,17 +92,15 @@ const routes = createBrowserRouter(
           <Route path="media" element={<Media />} />
           <Route path="likes" element={<Likes />} />
         </Route>
+
         <Route path=":tag/stats" element={<StatsWrapper />}>
           <Route index element={<Following />} />
           <Route path="following" element={<Following />} />
           <Route path="followers" element={<Followers />} />
         </Route>
-        <Route path=":tag/status/:postId" element={<Post />} />
 
-        <Route path="settings" element={<SettingsLayout />}>
-          <Route path="change_tag" element={<ChangeTag />} />
-          <Route path="change_password" element={<ChangePassword />} />
-        </Route>
+        <Route path=":tag/status/:postId" element={<Post />} />
+        <Route path="error" element={<ErrorPage />} />
       </Route>
     </Route>
   )

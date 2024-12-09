@@ -62,7 +62,7 @@ function PostPreview({ post }) {
 
   return (
     <Link
-      to={`/x.com/${author.tag}/status/${postId}`}
+      to={`/${author.tag}/status/${postId}`}
       className={styles.postPreview}
     >
       <Avatar photoURL={author.photoURL} />

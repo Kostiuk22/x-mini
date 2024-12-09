@@ -9,7 +9,7 @@ function SettingsLayout() {
   const [currentWidth] = useWindowWidth();
   const isMobile = currentWidth <= 1002;
   const location = useLocation();
-  const isMainRoute = location.pathname === '/x.com/settings';
+  const isMainRoute = location.pathname === '/settings';
 
   return (
     <div className={styles.settingsLayout}>

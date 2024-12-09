@@ -10,21 +10,14 @@ import useMenuPosition from '@hooks/useMenuPosition';
 function ActionMenu({
   onClose,
   isVisible,
-  size = 'small',
   items,
   isPostOfCurrentUser,
+  relPosition = 'right',
 }) {
   const dispatch = useDispatch();
   const menuRef = useRef(null);
   const position = useMenuPosition(menuRef);
   useClickOutside(menuRef, onClose);
-
-  let sizeStyles = '';
-  switch (size) {
-    case 'small':
-      sizeStyles = styles.small;
-      break;
-  }
 
   if (!isVisible) return null;
 
@@ -33,9 +26,9 @@ function ActionMenu({
       <div className={styles.overlay}></div>
       <div
         ref={menuRef}
-        className={`${styles.actionMenu} ${sizeStyles} ${
+        className={`${styles.actionMenu}  ${
           position === 'bottom' ? '' : styles.bottom
-        }`}
+        } ${relPosition === 'left' ? styles.left : styles.right}`}
       >
         {items.map(({ name, icon, color, action }) => (
           <ActionMenuItem

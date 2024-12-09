@@ -37,7 +37,7 @@ export const getCurrentUserMenuActions = (
     color: 'red',
     action: () => {
       handleMenuClose();
-      navigate('/x.com/home');
+      navigate('/home');
       deletePost({ postId, parentPostId: parentPostId ?? null });
     },
   },

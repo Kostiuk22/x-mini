@@ -24,6 +24,7 @@ function ProfileBtn() {
           onClose={handleMenuClose}
           isVisible={isMenuOpen}
           items={profileBtnMenuActions}
+          relPosition='left'
         />
       )}
     </button>

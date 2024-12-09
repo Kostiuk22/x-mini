@@ -7,7 +7,7 @@ function NavBar({ isAuthedUser, tag }) {
     <div className={styles.navBar}>
       <div className={styles.navItem}>
         <NavLink
-          to={`/x.com/${tag}`}
+          to={`/${tag}`}
           end
           className={({ isActive }) => (isActive ? styles.active : '')}
         >
@@ -16,7 +16,7 @@ function NavBar({ isAuthedUser, tag }) {
       </div>
       <div className={styles.navItem}>
         <NavLink
-          to={`/x.com/${tag}/with_replies`}
+          to={`/${tag}/with_replies`}
           className={({ isActive }) => (isActive ? styles.active : '')}
         >
           Replies
@@ -25,7 +25,7 @@ function NavBar({ isAuthedUser, tag }) {
    
       <div className={styles.navItem}>
         <NavLink
-          to={`/x.com/${tag}/media`}
+          to={`/${tag}/media`}
           className={({ isActive }) => (isActive ? styles.active : '')}
         >
           Media
@@ -34,7 +34,7 @@ function NavBar({ isAuthedUser, tag }) {
       {isAuthedUser && (
         <div className={styles.navItem}>
           <NavLink
-            to={`/x.com/${tag}/likes`}
+            to={`/${tag}/likes`}
             className={({ isActive }) => (isActive ? styles.active : '')}
           >
             Likes

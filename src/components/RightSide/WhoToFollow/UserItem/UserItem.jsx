@@ -14,7 +14,7 @@ function UserItem({ user }) {
   const currentUserId = useUserProfile().uid;
   
   return (
-    <div className={styles.userItem} onClick={() => navigate(`/x.com/${tag}`)}>
+    <div className={styles.userItem} onClick={() => navigate(`/${tag}`)}>
       <Avatar photoURL={photoURL} />
       <div className={styles.content}>
         <div className={styles.info}>

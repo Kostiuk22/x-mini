@@ -13,7 +13,7 @@ function HeaderProfile({ name, tag }) {
           </Link>
           <div className={styles.title}>
             <h2>{name}</h2>
-            {tag ? <p>@{tag}</p> : <p>35 posts</p>}
+            {<p>@{tag}</p>}
           </div>
         </header>
       </div>

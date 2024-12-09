@@ -50,7 +50,7 @@ function Reply({ replyId }) {
 
   return (
     <Link
-      to={`/x.com/${author.tag}/status/${replyId}`}
+      to={`/${author.tag}/status/${replyId}`}
       className={`${styles.reply} wrapper`}
     >
       <Avatar photoURL={author.photoURL} />

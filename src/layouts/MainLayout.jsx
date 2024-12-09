@@ -5,22 +5,14 @@ import Main from '@components/Main/Main';
 import RightSide from '@components/RightSide/RightSide';
 import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
 
-import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { Outlet, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 function MainLayout() {
   const curLocation = useLocation().pathname;
-  const navigate = useNavigate();
   const isLoadingUserState = useSelector((state) => state.user.isLoading);
   const isMessagesDfltRoute = curLocation.split('/').includes('messages');
   const isSettingsDfltRoute = curLocation.split('/').includes('settings');
-
-  useEffect(() => {
-    if (curLocation === '/x.com') {
-      navigate('/x.com/home');
-    }
-  }, [curLocation, navigate]);
 
   if (isLoadingUserState) return <LoadingSpinner />;
 

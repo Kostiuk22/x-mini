@@ -49,7 +49,7 @@ function MessageItem({ chat }) {
 
   const handleDeleteChat = async () => {
     await MessagesRequests.deleteChat({ chatId, senderId: userId, receiverId });
-    navigate('/x.com/messages');
+    navigate('/messages');
   };
 
   return (

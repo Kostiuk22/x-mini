@@ -9,7 +9,7 @@ function MessagesLayout() {
   const [currentWidth] = useWindowWidth();
   const isMobile = currentWidth <= 1002;
   const location = useLocation();
-  const isMainRoute = location.pathname === '/x.com/messages';
+  const isMainRoute = location.pathname === '/messages';
   return (
     <div className={styles.messagesLayout}>
       {(isMainRoute || !isMobile) && <Messages />}

@@ -9,7 +9,7 @@ import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
 import FollowBtn from '@components/ui/FollowBtn/FollowBtn';
 
 import { FaRegCalendarAlt } from 'react-icons/fa';
-import { Outlet, useParams } from 'react-router-dom';
+import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import { useUserProfile } from '@hooks/useUserProfile';
 import { transformDate } from '@utils/transformDate';
 import { UserRequests } from '@services/UserRequests';
@@ -19,6 +19,7 @@ import { FaLocationDot } from 'react-icons/fa6';
 function Profile() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate()
   
   const authUser = useUserProfile();
   const currentUserTag = useParams().tag;
@@ -43,14 +44,14 @@ function Profile() {
   }
 
   if (!user) {
-    return <div className={styles.profile}>User not found</div>;
+    navigate('/error')
   }
 
   const dateJoining = transformDate(user.dateOfJoining);
 
   return (
     <div className={styles.profile}>
-      <HeaderProfile name={user.name} />
+      <HeaderProfile name={user.name} tag={currentUserTag}/>
 
       <main className={styles.main}>
         <div className={styles.backImg}></div>

@@ -6,7 +6,7 @@ function NickName({ userName, tag }) {
   const handleClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    navigate(`/x.com/${tag}`);
+    navigate(`/${tag}`);
   };
   return (
     <div onClick={handleClick} className={styles.nickName}>

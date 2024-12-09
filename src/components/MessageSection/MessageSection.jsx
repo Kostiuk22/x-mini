@@ -2,7 +2,6 @@ import styles from './MessageSection.module.css';
 
 import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { IoMdInformationCircleOutline } from 'react-icons/io';
 import { Link, useParams } from 'react-router-dom';
 
 import Msg from './Msg/Msg';
@@ -79,9 +78,9 @@ function MessageSection() {
           )}
           <div className={styles.spaceBetween}>
             <h3>{receiverData?.name}</h3>
-            <div className={styles.btn}>
+            {/* <div className={styles.btn}>
               <IoMdInformationCircleOutline size={20} />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className={styles.details}>
