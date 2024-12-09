@@ -50,7 +50,6 @@ function MessageSection() {
   }, [chatId, uid]);
 
   const handleKeyDown = (e) => {
-    console.log(e)
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();

@@ -9,18 +9,18 @@ import LoadingSpinner from '@components/ui/LoadingSpinner/LoadingSpinner';
 import FollowBtn from '@components/ui/FollowBtn/FollowBtn';
 
 import { FaRegCalendarAlt } from 'react-icons/fa';
-import { Outlet, useNavigate, useParams } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import { useUserProfile } from '@hooks/useUserProfile';
 import { transformDate } from '@utils/transformDate';
 import { UserRequests } from '@services/UserRequests';
 import { useEffect, useState } from 'react';
 import { FaLocationDot } from 'react-icons/fa6';
+import InfoBlock from '@components/ui/InfoBlock/InfoBlock';
 
 function Profile() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate()
-  
+
   const authUser = useUserProfile();
   const currentUserTag = useParams().tag;
   const isAuthedUser = authUser.tag === currentUserTag;
@@ -37,21 +37,25 @@ function Profile() {
     } else {
       setUser(authUser);
     }
-  }, [authUser, isAuthedUser, currentUserTag ]);
+  }, [authUser, isAuthedUser, currentUserTag]);
 
   if (isLoading) {
     return <LoadingSpinner />;
   }
 
   if (!user) {
-    navigate('/error')
+    return (
+      <div className={styles.profile}>
+        <InfoBlock title="User not found" text="Please use correct data" />
+      </div>
+    );
   }
 
   const dateJoining = transformDate(user.dateOfJoining);
 
   return (
     <div className={styles.profile}>
-      <HeaderProfile name={user.name} tag={currentUserTag}/>
+      <HeaderProfile name={user.name} tag={currentUserTag} />
 
       <main className={styles.main}>
         <div className={styles.backImg}></div>

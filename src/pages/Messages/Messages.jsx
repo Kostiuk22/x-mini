@@ -22,7 +22,7 @@ function Messages() {
   const curUserId = useUserProfile().uid;
   const { isMenuOpen, handleMenuOpen, handleMenuClose } = useMenu();
   useClickOutside(modalRef, handleMenuClose);
-  
+
   const chatsState = useSelector((state) => state.chats);
   const userChats = chatsState.userChats;
 
@@ -73,13 +73,17 @@ function Messages() {
           <MessageItem key={chat.updatedAt} chat={chat} />
         ))}
 
-      {!userChats && (
+      {(!userChats || userChats.length === 0) && (
         <div className={styles.box}>
           <InfoBlock
             title="Welcome to your inbox!"
             text="Drop a line, share posts and more with private conversations between you and others on X. "
           />
-          <BlueBtn onClick={handleMenuOpen}>Write a Message</BlueBtn>
+          <div className={styles.boxWidth}>
+            <BlueBtn onClick={handleMenuOpen}>
+              Write a Message
+            </BlueBtn>
+          </div>
         </div>
       )}
 

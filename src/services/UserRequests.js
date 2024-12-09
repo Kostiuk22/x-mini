@@ -191,7 +191,6 @@ export const UserRequests = {
   updateUserInfo: async function (data) {
     try {
       const userRef = doc(db, 'users', data.uid);
-      console.log(data)
       await updateDoc(userRef, data);
       toast.success('Info successfully changed');
     } catch (error) {

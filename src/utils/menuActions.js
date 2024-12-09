@@ -20,7 +20,6 @@ export const postMenuActions = (isFollowing, toggleFollow, handleMenuClose) => [
     color: 'red',
     action: () => {
       handleMenuClose();
-      console.log('Coming soon!');
     },
   },
 ];

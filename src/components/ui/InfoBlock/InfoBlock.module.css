@@ -1,12 +1,13 @@
 .description {
   display: flex;
   justify-content: center;
-  padding-top: 32px ;
+  padding-top: 32px;
 }
 
 .box {
   display: inline-block;
   width: 336px;
+  text-align: center;
 }
 
 .box h1 {
@@ -19,4 +20,17 @@
   font-size: 15px;
   font-weight: 400;
   margin-bottom: 28px;
+}
+
+@media (max-width: 1399px) {
+  .description {
+    padding-top: 24px;
+  }
+  .box {
+    width: 300px;
+  }
+
+  .box h1 {
+    font-size: 24px;
+  }
 }
